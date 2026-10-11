@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Gaia Grosso</title>
+<meta name="description" content="Research of Gaia Grosso: robust anomaly tests under systematic uncertainty, interpretable physics-inspired architectures, detection at scale, generative model validation, and auditing large AI models.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-name" href="index.html">Gaia Grosso</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html" class="here">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="talks.html">Talks</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="community.html">Community</a>
+      <a href="cv.pdf">CV</a>
+    </nav>
+    <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+  </div>
+</header>
+
+<main>
+
+  <section id="overview">
+    <h1 class="page-title">Research</h1>
+    <p class="lede" style="margin-bottom:1.6rem">
+      Scientific discovery at scale, with statistical guarantees &mdash;
+      <em>uncertainty quantification, robustness, interpretability.</em>
+    </p>
+
+    <p>
+      An anomaly is not always visible one observation at a time. A loaded die looks fair on any
+      single throw and gives itself away only in the frequencies of many &mdash; and the same
+      holds for fraud inside a plausible transaction history, for new fundamental interactions
+      distorting the distributions of particle collisions, or for a language model whose
+      behaviour has drifted in ways no single output reveals. Asking <em>does what we observe
+      match what our model of the world predicts?</em> is one statistical problem, and classical
+      goodness-of-fit tests answer it rigorously but lose power when deviations are rare or
+      buried among uninformative features.
+    </p>
+    <p>
+      Modern machine learning handles the complexity but usually surrenders the two properties
+      that make a detection actionable: calibrated error control, and an account of what in the
+      data produced the signal. My work aims at methods that give up neither. Three commitments
+      run through all of it &mdash; that uncertainty in the reference model belongs
+      <em>inside</em> the test rather than bolted on afterwards; that interpretability should be
+      a property of the architecture rather than a post-hoc narrative; and that a detection which
+      cannot be characterized is of limited scientific use.
+    </p>
+
+    <!-- jump links: the whole programme at a glance -->
+    <nav class="topicnav" aria-label="Research topics">
+      <a href="#robustness"><b>Robustness &amp; uncertainty</b><span>Systematics inside the test</span></a>
+      <a href="#architectures"><b>Interpretable architectures</b><span>Sparsity, locality, competition</span></a>
+      <a href="#scale"><b>Detection at scale</b><span>Raw data to p-values</span></a>
+      <a href="#generative"><b>Generative validation</b><span>When a surrogate can stand in</span></a>
+      <a href="#ai-models"><b>Auditing AI models</b><span>Drift, harm, representation</span></a>
+    </nav>
+
+    <div class="threads">
+
+      <!-- ---------------- 1 ---------------- -->
+      <div class="thread" id="robustness">
+        <h3>Robust anomaly tests under systematic uncertainty</h3>
+        <p>
+          Systematic uncertainties built into the detection model rather than corrected for
+          afterwards; anomaly scores decomposed into known and novel sources; ensembles of
+          specialized experts whose diversity buys robustness to anomalies no one anticipated.
+          Every architectural choice determines what a test can and cannot see, and I work to
+          make that dependence explicit and controllable.
+        </p>
+        <div class="refs">
+          &rarr;
+          <a href="publications.html#pub-covariant">Covariant contrastive learning</a>
+          <a href="publications.html#pub-imperfect">Imperfect machine</a>
+          <a href="publications.html#pub-multiple">Multiple testing</a>
+          <a href="publications.html#pub-batches">Anomaly-aware statistic</a>
+        </div>
+        <figure class="thread-fig">
+          <img src="fig-robustness.png" alt="Test-statistic distributions before and after uncertainty calibration.">
+          <figcaption>Without calibration, a systematic distortion of the reference is mistaken for signal. Absorbing it into the nuisance model removes the false alarm while sensitivity to a genuine signal is retained. From <a href="publications.html#pub-covariant">Covariant contrastive learning for uncertainty-aware anomaly detection</a>.</figcaption>
+        </figure>
+      </div>
+
+      <!-- ---------------- 2 ---------------- -->
+      <div class="thread" id="architectures">
+        <h3>Physics-inspired architectures and interpretability</h3>
+        <p>
+          A detection that cannot say anything about the anomaly it flagged does little for
+          scientific progress. I design models whose interpretability comes from their
+          architecture rather than from a post-hoc explanation: in SparKer, locality, sparsity,
+          and competitive self-organization act as inductive biases, so individual components
+          specialize on distinct anomalous patterns and the anomaly score acquires a geometric
+          reading that can be traced back to the data. Physical principles &mdash; energy-based
+          modelling above all &mdash; are where these design choices come from.
+        </p>
+        <div class="refs">
+          &rarr;
+          <a href="publications.html#pub-sparker">SparKer</a>
+          <a href="publications.html#pub-dictionaries">Dictionaries of new physics</a>
+        </div>
+        <figure class="thread-fig">
+          <img src="fig-architectures.png" alt="SparKer: anomaly-detection regimes, sparse local kernels in feature space, and specialized components.">
+          <figcaption>Sparse local kernels self-organize in the feature space, each specializing on a different anomalous pattern &mdash; which is what makes the anomaly score geometrically interpretable. From <a href="publications.html#pub-sparker">SparKer</a>.</figcaption>
+        </figure>
+      </div>
+
+      <!-- ---------------- 3 ---------------- -->
+      <div class="thread" id="scale">
+        <h3>Detection at scale, from raw data to p-values</h3>
+        <p>
+          End-to-end strategies that pair domain-informed representation learning with
+          interpretable likelihood-ratio tests, carrying point clouds, time series, images, or
+          text from raw input all the way to rigorous p-values, without handcrafted summary
+          statistics standing in between. I apply this to searches for new phenomena at the LHC,
+          working toward statistical analysis performed directly on low-level detector
+          information, including in real time during data acquisition.
+        </p>
+        <div class="refs">
+          &rarr;
+          <a href="publications.html#pub-autoscidact">AutoSciDACT</a>
+          <a href="publications.html#pub-contrastive">Contrastive embeddings</a>
+          <a href="publications.html#pub-resonant">Resonant NPLM</a>
+          <a href="publications.html#pub-manifold">Product manifolds</a>
+          <a href="publications.html#pub-triggerless">Triggerless acquisition</a>
+        </div>
+        <figure class="thread-fig">
+          <img src="fig-detection.png" alt="The AutoSciDACT pipeline, from observation through contrastive embedding to a test statistic.">
+          <figcaption>Contrastive learning compresses high-dimensional scientific data into a low-dimensional reference space; anomalous overdensities are then scored there and their significance quantified. From <a href="publications.html#pub-autoscidact">AutoSciDACT</a>.</figcaption>
+        </figure>
+      </div>
+
+      <!-- ---------------- 4 ---------------- -->
+      <div class="thread" id="generative">
+        <h3>Validating generative models</h3>
+        <p>
+          Generative surrogates are increasingly used in place of full physics simulations, which
+          only helps if we know where they are wrong. I work on goodness-of-fit tests that decide
+          whether a generative model is faithful enough to stand in for the real thing, and that
+          diagnose the regions where it underperforms rather than returning a single pass/fail
+          number &mdash; with the epistemic uncertainty of the generator propagated into the test
+          itself.
+        </p>
+        <div class="refs">
+          &rarr;
+          <a href="publications.html#pub-genval">Learning to validate generative models</a>
+          <a href="publications.html#pub-uqpipeline">Uncertainty-aware validation pipeline</a>
+        </div>
+      </div>
+
+      <!-- ---------------- 5 ---------------- -->
+      <div class="thread" id="ai-models">
+        <h3>Auditing and monitoring large AI models</h3>
+        <p>
+          Large models hide generation rules as intricate as any physical system, and their
+          behaviour drifts with context. The same detection machinery becomes a diagnostic
+          instrument for them: monitoring how internal structure varies under changing
+          conditions, auditing fine-tuned models for harm that looks normal one output at a time,
+          and asking what the geometry of a representation says about the features a model has
+          actually learned. The aim throughout is to detect and <em>characterize</em>
+          simultaneously &mdash; to localize what changed, not merely to flag that something did.
+        </p>
+        <div class="refs">
+          &rarr;
+          <a href="publications.html#pub-batchsafety">Batch-level tests for AI safety</a>
+          <a href="publications.html#pub-sparker">SparKer</a>
+        </div>
+        <figure class="thread-fig">
+          <img src="fig-ai-models.png" alt="Batch-level monitoring of an LLM input stream using a two-sample test on hidden states.">
+          <figcaption>A coordinated attack campaign is statistically visible in aggregate before any single prompt trips the point-level guard &mdash; the case for testing batches, not just individual inputs. From <a href="publications.html#pub-batchsafety">Adaptive and interpretable two-sample test as a batch-level tool for AI safety</a>.</figcaption>
+        </figure>
+      </div>
+
+    </div>
+
+    <!-- ---------------- VERAIPHY ---------------- -->
+    <div class="initiative" id="veraiphy">
+      <h3>VERAIPHY &mdash; Validation &amp; Evaluation for Robust AI in Physics</h3>
+      <p>
+        I co-organize VERAIPHY, an initiative endorsed by the PHYSTAT community that is producing
+        a series of articles on statistical standards for developing, evaluating, and deploying
+        machine learning in fundamental physics. Each article takes one methodological domain and
+        asks what has to hold statistically for results obtained with it to support a discovery
+        claim &mdash; which questions to ask, which tests to run, and how to read the answers.
+      </p>
+      <p>
+        My own contribution to the series is the review
+        <a href="publications.html#pub-verification">Are we ready for AI-driven discovery? AI
+        verification before the next fundamental physics breakthrough</a>, which sets out when
+        verification is essential within the statistical discovery workflow, and where machine
+        learning&rsquo;s intrinsic limits &mdash; unavoidable inductive bias, sample complexity,
+        experimental constraints &mdash; bound what can be claimed.
+      </p>
+      <div class="refs">
+        <a href="https://phystat.github.io/Website/veraiphy/">Initiative &amp; articles</a>
+        <a href="publications.html#pub-veraiphy">Opening article</a>
+        <a href="https://indico.cern.ch/event/1617006/">Workshop, Feb 2026</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= SOFTWARE ============================= -->
+  <section id="software">
+    <h2>Software</h2>
+
+    <div class="project">
+      <h3>NPLM &mdash; New Physics Learning Machine</h3>
+      <p>
+        A machine-learning implementation of the likelihood-ratio test for signal-agnostic
+        anomaly detection: returns a calibrated p-value without specifying the signal in
+        advance, and reconstructs the most discrepant regions of phase space. Developed during
+        my PhD and extended since.
+      </p>
+      <div class="tags"><span class="tag">hypothesis testing</span><span class="tag">PyTorch</span><span class="tag">interpretable</span></div>
+      <div class="entry-links" style="margin-top:.6rem">
+        <a href="https://github.com/GaiaGrosso/NPLM_package">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>SparKer</h3>
+      <p>
+        Sparse, self-organizing ensembles of local kernels for detecting rare anomalies in
+        learned representations. Sparsity, locality, and competition produce geometrically
+        interpretable detection experts with formal learning-dynamics guarantees. Takes point
+        clouds, time series, images, or text through to rigorous p-values.
+      </p>
+      <div class="tags"><span class="tag">kernel methods</span><span class="tag">interpretability</span><span class="tag">AI safety</span></div>
+      <div class="entry-links" style="margin-top:.6rem">
+        <a href="publications.html#pub-sparker">Paper</a>
+        <a href="#patent">Patent</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Generative model validation</h3>
+      <p>
+        Goodness-of-fit tooling for generative surrogates: tests that both detect deviations
+        and diagnose the regions where a generative model underperforms, with epistemic
+        uncertainty propagated into the test.
+      </p>
+      <div class="tags"><span class="tag">generative models</span><span class="tag">validation</span></div>
+      <div class="entry-links" style="margin-top:.6rem">
+        <a href="publications.html#pub-genval">Paper</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Teaching notebooks</h3>
+      <p>
+        Hands-on notebooks on diffusion models, variational autoencoders, and generative-model
+        validation, written for the IAIFI Summer School and free to reuse.
+      </p>
+      <div class="tags"><span class="tag">teaching</span><span class="tag">Jupyter</span></div>
+      <div class="entry-links" style="margin-top:.6rem">
+        <a href="https://github.com/GaiaGrosso/generative-models-tutorials">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= PATENT ============================= -->
+  <section id="patent">
+    <h2>Patent</h2>
+    <div class="entry">
+      <div class="entry-title">Methods for explainable novelty discovery using artificial intelligence</div>
+      <div class="authors"><span class="me">Grosso G.</span>, Ba D.E., Hindupur Ravindra S.S.<sup>&dagger;</sup></div>
+      <div class="entry-meta">
+        U.S. Provisional Patent Application No. 63/909,442, filed October 31, 2025.
+        Covers the <a href="publications.html#pub-sparker">SparKer</a> method.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>&copy; <span class="year">2026</span> Gaia Grosso</span>
+  <span><a href="index.html">Home</a> &middot; <a href="cv.pdf">CV</a></span>
+</footer>
+
+<script src="theme.js"></script>
+</body>
+</html>

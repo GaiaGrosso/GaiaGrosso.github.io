@@ -4,223 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gaia Grosso</title>
-<meta name="description" content="Gaia Grosso — IAIFI Postdoctoral Fellow. Robust, interpretable statistical anomaly detection at scale, for scientific discovery and for understanding large AI models.">
-
+<meta name="description" content="Gaia Grosso — statistical methods for detecting when data deviate from a reference model, for scientific discovery and for auditing large AI models. Postdoctoral Associate, MIT.">
 <meta property="og:title" content="Gaia Grosso">
-<meta property="og:description" content="Robust, interpretable statistical anomaly detection at scale — for scientific discovery and for understanding large AI models.">
+<meta property="og:description" content="Statistical methods for detecting when data deviate from a reference model — for scientific discovery and for auditing large AI models.">
 <meta property="og:image" content="photo.jpg">
 <meta property="og:type" content="website">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
-
-<style>
-  :root {
-    --bg: #fbfbfa;
-    --surface: #ffffff;
-    --text: #1a1a1a;
-    --muted: #6b6b6b;
-    --line: #e5e4e1;
-    --accent: #1f5c8b;
-    --accent-soft: #eaf1f7;
-    --max: 740px;
-  }
-  [data-theme="dark"] {
-    --bg: #131415;
-    --surface: #191a1c;
-    --text: #eceae6;
-    --muted: #9a9a97;
-    --line: #2b2c2f;
-    --accent: #7db3dc;
-    --accent-soft: #1c2a35;
-  }
-
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
-
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: 16.5px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    transition: background .25s ease, color .25s ease;
-  }
-
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; text-underline-offset: 2px; }
-
-  /* ---------- nav ---------- */
-  header.nav {
-    position: sticky; top: 0; z-index: 20;
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-inner {
-    max-width: var(--max); margin: 0 auto; padding: .85rem 1.5rem;
-    display: flex; align-items: center; gap: 1.15rem;
-  }
-  .nav-name { font-weight: 600; letter-spacing: -.01em; margin-right: auto; }
-  .nav-links { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .nav-links a { color: var(--muted); font-size: .88rem; font-weight: 500; }
-  .nav-links a:hover { color: var(--text); text-decoration: none; }
-
-  #theme-toggle {
-    background: none; border: 1px solid var(--line); color: var(--muted);
-    border-radius: 999px; width: 32px; height: 32px; cursor: pointer;
-    display: grid; place-items: center; font-size: .9rem; flex: none;
-    transition: border-color .2s, color .2s;
-  }
-  #theme-toggle:hover { color: var(--text); border-color: var(--muted); }
-
-  /* ---------- layout ---------- */
-  main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 5rem; }
-  section { padding-top: 3.75rem; }
-
-  h1 {
-    font-size: clamp(1.9rem, 5vw, 2.5rem);
-    line-height: 1.15; letter-spacing: -.025em;
-    font-weight: 600; margin: 0 0 .4rem;
-  }
-  h2 {
-    font-size: .78rem; font-weight: 600;
-    letter-spacing: .12em; text-transform: uppercase;
-    color: var(--muted); margin: 0 0 1.4rem;
-  }
-  h3 { font-size: 1rem; font-weight: 600; margin: 0 0 .2rem; }
-  p { margin: 0 0 1rem; }
-  .lede { color: var(--muted); font-size: 1.02rem; }
-
-  /* ---------- hero ---------- */
-  .hero { padding-top: 4.25rem; display: flex; gap: 2rem; align-items: flex-start; }
-  .hero-text { flex: 1; min-width: 0; }
-  .role { color: var(--muted); margin: 0 0 1.25rem; }
-  .role em { font-family: "Newsreader", Georgia, serif; font-style: italic; }
-
-  .avatar {
-    width: 168px; height: 168px; border-radius: 50%;
-    object-fit: cover; flex: none;
-    border: 1px solid var(--line); background: var(--surface);
-  }
-
-  .links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.4rem; }
-  .links a {
-    font-size: .86rem; font-weight: 500;
-    padding: .32rem .8rem; border-radius: 999px;
-    border: 1px solid var(--line); color: var(--text);
-    transition: background .18s, border-color .18s;
-  }
-  .links a:hover {
-    background: var(--accent-soft); border-color: var(--accent);
-    color: var(--accent); text-decoration: none;
-  }
-
-  /* ---------- lists ---------- */
-  ul.bullets { padding-left: 1.15rem; margin: 0 0 1rem; }
-  ul.bullets li { margin-bottom: .35rem; }
-
-  .threads { display: grid; gap: 1.4rem; }
-  .thread { border-left: 2px solid var(--line); padding-left: 1rem; }
-  .thread p { margin: 0; color: var(--muted); font-size: .95rem; }
-  .refs { margin-top: .45rem; font-size: .82rem; color: var(--muted); }
-  .refs a { margin-right: .6rem; white-space: nowrap; }
-
-  /* VERAIPHY block at the end of Research */
-  .initiative {
-    margin-top: 1.9rem; padding: 1.15rem 1.3rem;
-    border: 1px solid var(--line); border-left: 3px solid var(--accent);
-    border-radius: 8px; background: var(--accent-soft);
-  }
-  .initiative h3 { margin-bottom: .4rem; }
-  .initiative p { margin: 0; color: var(--muted); font-size: .95rem; }
-  .initiative p + p { margin-top: .7rem; }
-  .initiative .refs { margin-top: .7rem; }
-
-  .bio { color: var(--muted); font-size: .95rem; margin-bottom: .8rem; }
-  .bio:last-of-type { margin-bottom: 0; }
-
-  /* wide figure, full column width, below the paragraph */
-  .thread-fig {
-    margin: .9rem 0 0; padding: .55rem;
-    border: 1px solid var(--line); border-radius: 8px;
-    background: #fff;
-  }
-  .thread-fig img { display: block; width: 100%; height: auto; border-radius: 3px; }
-  .thread-fig figcaption {
-    font-size: .78rem; color: var(--muted); line-height: 1.4;
-    margin-top: .45rem; padding: 0 .15rem .1rem;
-  }
-
-  /* ---------- entries (publications / teaching) ---------- */
-  .entry { padding: .95rem 0; border-top: 1px solid var(--line); scroll-margin-top: 6rem; }
-  .entry:first-of-type { border-top: none; padding-top: 0; }
-  .entry:target {
-    background: var(--accent-soft);
-    box-shadow: 0 0 0 .6rem var(--accent-soft);
-    border-radius: 3px;
-  }
-  .entry-title { font-weight: 500; }
-  .entry-meta { color: var(--muted); font-size: .9rem; }
-  .venue { font-family: "Newsreader", Georgia, serif; font-style: italic; }
-  .entry-links { font-size: .84rem; margin-top: .25rem; display: flex; gap: .7rem; flex-wrap: wrap; }
-  .authors { color: var(--muted); font-size: .88rem; }
-  .authors .me { font-weight: 600; color: var(--text); }
-  .where { font-size: .84rem; color: var(--muted); }
-
-  /* ---------- projects ---------- */
-  .project {
-    border: 1px solid var(--line); border-radius: 10px;
-    padding: 1.1rem 1.25rem; margin-bottom: .85rem;
-    background: var(--surface);
-    transition: border-color .18s;
-  }
-  .project:hover { border-color: var(--accent); }
-  .project p { margin: 0; color: var(--muted); font-size: .95rem; }
-  .project .tags { margin-top: .55rem; display: flex; gap: .4rem; flex-wrap: wrap; }
-  .tag {
-    font-size: .74rem; letter-spacing: .02em;
-    padding: .12rem .5rem; border-radius: 4px;
-    background: var(--accent-soft); color: var(--accent);
-  }
-
-  /* ---------- contact ---------- */
-  .contact-grid { display: grid; gap: .55rem; }
-  .contact-row { display: flex; gap: .9rem; font-size: .95rem; }
-  .contact-row span:first-child { color: var(--muted); min-width: 5.5rem; flex: none; }
-
-  footer {
-    max-width: var(--max); margin: 0 auto;
-    padding: 2rem 1.5rem 3rem;
-    border-top: 1px solid var(--line);
-    color: var(--muted); font-size: .82rem;
-    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
-  }
-
-  @media (max-width: 600px) {
-    .hero { flex-direction: column-reverse; align-items: flex-start; gap: 1.25rem; }
-    .avatar { width: 130px; height: 130px; }
-    .nav-inner { flex-wrap: wrap; }
-    .nav-name { width: 100%; margin-right: 0; }
-    .nav-links { gap: .8rem; }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="nav">
   <div class="nav-inner">
-    <span class="nav-name">Gaia Grosso</span>
+    <a class="nav-name" href="index.html">Gaia Grosso</a>
     <nav class="nav-links">
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#talks">Talks</a>
-      <a href="#software">Software</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html" class="here">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="talks.html">Talks</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="community.html">Community</a>
+      <a href="cv.pdf">CV</a>
     </nav>
     <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
   </div>
@@ -228,485 +34,255 @@
 
 <main>
 
-  <!-- ============================= HERO ============================= -->
   <section class="hero" id="top">
     <div class="hero-text">
       <h1>Gaia Grosso</h1>
       <p class="role">
-        Postdoctoral Fellow<br>
-        <a href="https://iaifi.org/"><em>NSF AI Institute for Artificial Intelligence and
-        Fundamental Interactions</em> (IAIFI)</a><br>
-        MIT &middot; Harvard SEAS
+        Postdoctoral Associate, <em>Laboratory for Nuclear Science</em><br>
+        Massachusetts Institute of Technology
       </p>
+      <p class="pull">Learning begins where expectation fails.</p>
       <p class="lede">
-        Learning begins where expectation fails. I build statistical and machine learning
-        methods for detecting deviations from expectation &mdash; at a scale and complexity
-        where classical tests break down, and with the rigor and interpretability that make a
-        detection worth acting on. I work on this for scientific discovery, and for
-        understanding the behaviour of large AI models.
+        I develop statistical methods for detecting when data deviate from a reference model in
+        high-dimensional settings &mdash; with calibrated error control, and with enough
+        interpretability to say <em>where</em> and <em>why</em> the deviation occurred. I apply
+        them to scientific discovery in particle physics, and to auditing, monitoring, and
+        interpreting large AI models.
       </p>
       <div class="links">
+        <a class="primary" href="cv.pdf">CV (PDF)</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
         <a href="mailto:gaiag795@mit.edu">Email</a>
-        <a href="cv.pdf">CV</a>
         <a href="https://scholar.google.com/citations?user=hSk0b3oAAAAJ">Scholar</a>
+        <a href="https://inspirehep.net/authors/1799404">INSPIRE</a>
         <a href="https://orcid.org/0000-0002-8303-3291">ORCID</a>
         <a href="https://github.com/GaiaGrosso">GitHub</a>
+        <a href="https://www.linkedin.com/in/gaia-grosso-a04185155">LinkedIn</a>
       </div>
+      <!-- Remove this banner once the search is over. -->
+      <p class="market">
+        <strong>I am on the 2026&ndash;27 faculty job market.</strong>
+        I am looking for positions where statistical methodology, machine learning, and the
+        physical sciences meet. Please get in touch &mdash;
+        <a href="mailto:gaiag795@mit.edu">gaiag795@mit.edu</a>.
+      </p>
     </div>
-    <!-- Drop a square photo named photo.jpg next to this file; hides itself if missing. -->
     <img class="avatar" src="photo.jpg" alt="Gaia Grosso" onerror="this.style.display='none'">
   </section>
 
-  <!-- ============================= RESEARCH ============================= -->
-  <section id="research">
+  <!-- ============================= RESEARCH SUMMARY ============================= -->
+  <section id="research-summary">
     <h2>Research</h2>
     <p>
       An anomaly is not always visible one observation at a time. A loaded die looks fair on any
       single throw and gives itself away only in the frequencies of many &mdash; and the same
-      holds for fraud inside a plausible transaction history, or for new fundamental
-      interactions distorting the distributions of particle collisions. Asking <em>does what we
-      observe match what our model of the world predicts?</em> is a statistical problem, and one
-      that classical tests answer rigorously but lose power on when anomalies are rare or buried
-      among uninformative features. My research looks for methods that scale to the complexity
-      of contemporary scientific data while still returning calibrated p-values and an account
-      of <em>where</em> and <em>why</em> the data departs from expectation.
+      holds for fraud inside a plausible transaction history, for new fundamental interactions
+      distorting the distributions of particle collisions, or for a language model whose
+      behaviour has drifted in ways no single output reveals. Asking <em>does what we observe
+      match what our model of the world predicts?</em> is one statistical problem, and classical
+      tests answer it rigorously but lose power when deviations are rare or buried among
+      uninformative features.
+    </p>
+    <p>
+      My research builds tests that scale to the complexity of modern data without giving up
+      what makes a detection usable: a calibrated p-value, an account of which structure in the
+      data produced it, and robustness to the uncertainties of the reference model itself.
     </p>
 
-    <div class="threads">
-      <div class="thread">
-        <h3>Robust anomaly tests under systematic uncertainty</h3>
-        <p>
-          Systematic uncertainties built into the detection model rather than corrected for
-          afterwards; anomaly scores decomposed into known and novel sources; ensembles of
-          specialized experts whose diversity buys robustness to anomalies no one anticipated.
-          Every architectural choice determines what a test can and cannot see, and I work to
-          make that dependence explicit and controllable.
-        </p>
-        <div class="refs">
-          &rarr;
-          <a href="#pub-covariant">Covariant contrastive learning</a>
-          <a href="#pub-imperfect">Imperfect machine</a>
-          <a href="#pub-multiple">Multiple testing</a>
-          <a href="#pub-batches">Anomaly-aware statistic</a>
-        </div>
-        <figure class="thread-fig">
-          <img src="fig-robustness.png" alt="Test-statistic distributions before and after uncertainty calibration.">
-          <figcaption>Without calibration, a systematic distortion of the reference is mistaken for signal. Absorbing it into the nuisance model removes the false alarm while sensitivity to a genuine signal is retained. From <a href="#pub-covariant">Covariant contrastive learning for uncertainty-aware anomaly detection</a>.</figcaption>
-        </figure>
-      </div>
-      <div class="thread">
-        <h3>Physics-inspired architectures and interpretability</h3>
-        <p>
-          A detection that cannot say anything about the anomaly it flagged does little for
-          scientific progress. I design models whose interpretability comes from their
-          architecture rather than from a post-hoc explanation: in SparKer, locality, sparsity,
-          and competitive self-organization act as inductive biases, so individual components
-          specialize on distinct anomalous patterns and the anomaly score acquires a geometric
-          reading that can be traced back to the data. Physical principles &mdash; energy-based
-          modelling above all &mdash; are where these design choices come from.
-        </p>
-        <div class="refs">
-          &rarr;
-          <a href="#pub-sparker">SparKer</a>
-        </div>
-        <figure class="thread-fig">
-          <img src="fig-architectures.png" alt="SparKer: anomaly-detection regimes, sparse local kernels in feature space, and specialized components.">
-          <figcaption>Sparse local kernels self-organize in the feature space, each specializing on a different anomalous pattern &mdash; which is what makes the anomaly score geometrically interpretable. From <a href="#pub-sparker">SparKer</a>.</figcaption>
-        </figure>
-      </div>
-      <div class="thread">
-        <h3>Detection at scale, from raw data to p-values</h3>
-        <p>
-          End-to-end strategies that pair domain-informed representation learning with
-          interpretable likelihood-ratio tests, carrying point clouds, time series, images, or
-          text from raw input all the way to rigorous p-values, without handcrafted summary
-          statistics standing in between. I apply this to searches for new phenomena at the LHC,
-          working toward statistical analysis performed directly on low-level detector
-          information, including in real time during data acquisition.
-        </p>
-        <div class="refs">
-          &rarr;
-          <a href="#pub-sparker">SparKer</a>
-          <a href="#pub-autoscidact">AutoSciDACT</a>
-          <a href="#pub-contrastive">Contrastive embeddings</a>
-          <a href="#pub-resonant">Resonant NPLM</a>
-        </div>
-        <figure class="thread-fig">
-          <img src="fig-detection.png" alt="The AutoSciDACT pipeline, from observation through contrastive embedding to a test statistic.">
-          <figcaption>Contrastive learning compresses high-dimensional scientific data into a low-dimensional reference space; anomalous overdensities are then scored there and their significance quantified. From <a href="#pub-autoscidact">AutoSciDACT</a>.</figcaption>
-        </figure>
-      </div>
-      <div class="thread">
-        <h3>Validating generative models</h3>
-        <p>
-          Generative surrogates are increasingly used in place of full physics simulations, which
-          only helps if we know where they are wrong. I work on goodness-of-fit tests that decide
-          whether a generative model is faithful enough to stand in for the real thing, and that
-          diagnose the regions where it underperforms rather than returning a single pass/fail
-          number &mdash; with the epistemic uncertainty of the generator propagated into the test
-          itself.
-        </p>
-        <div class="refs">
-          &rarr;
-          <a href="#pub-genval">Learning to validate generative models</a>
+    <div class="teasers">
+      <a class="teaser" href="research.html#robustness">
+        <b>Robust anomaly tests under systematic uncertainty</b>
+        <span>Uncertainties built into the test rather than corrected for afterwards.</span>
+      </a>
+      <a class="teaser" href="research.html#architectures">
+        <b>Physics-inspired architectures and interpretability</b>
+        <span>Sparsity, locality, and competition as the source of interpretability.</span>
+      </a>
+      <a class="teaser" href="research.html#scale">
+        <b>Detection at scale, from raw data to p-values</b>
+        <span>Representation learning paired with interpretable likelihood-ratio tests.</span>
+      </a>
+      <a class="teaser" href="research.html#generative">
+        <b>Validating generative models</b>
+        <span>Deciding when a generative surrogate can stand in for the real thing.</span>
+      </a>
+      <a class="teaser" href="research.html#ai-models">
+        <b>Auditing and monitoring large AI models</b>
+        <span>Detecting and characterizing harmful behaviour and domain drift.</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================= NEWS ============================= -->
+  <section id="news">
+    <h2>News</h2>
+    <div class="rows">
+      <div class="news-item featured">
+        <div class="news-date">28 Sep 2026</div>
+        <div class="news-body">
+          <span class="news-badge">New paper</span>
+          <strong><a href="publications.html#pub-covariant">Covariant contrastive learning for
+          uncertainty-aware anomaly detection</a></strong> is on arXiv &mdash; led by
+          <a href="teaching.html#mentoring">Shelley Tong</a> (MIT), on building latent
+          representations that behave predictably under systematic distortions.
+          <span class="news-sub"><a href="https://arxiv.org/abs/2609.35755">arXiv:2609.35755</a></span>
         </div>
       </div>
-      <div class="thread">
-        <h3>Diagnostics for large AI models</h3>
-        <p>
-          Large models hide generation rules as intricate as any physical system, and their
-          behaviour drifts with context. I am interested in turning the same detection
-          methodology into diagnostic instruments for them: monitoring how internal structure
-          varies under changing conditions, and identifying failure modes, hallucination, and
-          unsafe dynamics through tests that localize what changed.
-        </p>
-        <div class="refs">
-          &rarr;
-          <a href="#pub-sparker">SparKer</a>
-          <a href="https://openreview.net/pdf?id=CAmXdNUaeb">Batch-level tests for AI safety</a>
+      <div class="news-item">
+        <div class="news-date">Sep 2026</div>
+        <div class="news-body">
+          Invited talk at the <a href="talks.html">LHC Physics Center, Fermilab</a>
+          &mdash; <em>Discovery through the lens of AI: scaling anomaly detection with learned
+          representations</em>.
         </div>
-        <figure class="thread-fig">
-          <img src="fig-ai-models.png" alt="Batch-level monitoring of an LLM input stream using a two-sample test on hidden states.">
-          <figcaption>A coordinated attack campaign is statistically visible in aggregate before any single prompt trips the point-level guard &mdash; the case for testing batches, not just individual inputs. From <a href="https://openreview.net/pdf?id=CAmXdNUaeb">Batch-level tests for AI safety</a>.</figcaption>
-        </figure>
+      </div>
+      <div class="news-item">
+        <div class="news-date">Sep 2026</div>
+        <div class="news-body">
+          Started as Postdoctoral Associate at the MIT Laboratory for Nuclear Science,
+          following three years as an <a href="https://iaifi.org/">IAIFI</a> Fellow.
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">Aug 2026</div>
+        <div class="news-body">
+          <span class="news-badge">New paper</span>
+          <a href="publications.html#pub-veraiphy">VERAIPHY</a>, the opening article of the
+          PHYSTAT series on statistical standards for machine learning in fundamental physics,
+          is on arXiv. I also joined the PHYSTAT organizing team and Advisory Committee.
+          <span class="news-sub"><a href="https://arxiv.org/abs/2608.17724">arXiv:2608.17724</a></span>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">Jul 2026</div>
+        <div class="news-body">
+          Presented <em>Adaptive and interpretable two-sample test as a batch-level tool for AI
+          safety</em> as a poster at the
+          <a href="https://openreview.net/pdf?id=CAmXdNUaeb">ICML Workshop on Mechanistic
+          Interpretability</a>, Seoul.
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">10 Jul 2026</div>
+        <div class="news-body">
+          <span class="news-badge">New paper</span>
+          <a href="publications.html#pub-verification">Are we ready for AI-driven discovery?</a>
+          &mdash; my review for the VERAIPHY series, on when verification is essential in the
+          statistical discovery workflow and where machine learning&rsquo;s intrinsic limits
+          bound what can be claimed.
+          <span class="news-sub"><a href="https://arxiv.org/abs/2607.10039">arXiv:2607.10039</a></span>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">Feb 2026</div>
+        <div class="news-body">
+          Co-organized the
+          <a href="https://indico.cern.ch/event/1617006/">VERAIPHY workshop</a> in Amsterdam
+          (16&ndash;17 February) &mdash; the initiative&rsquo;s first meeting on validation and
+          evaluation practice for machine learning in fundamental physics.
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">Nov 2025</div>
+        <div class="news-body">
+          <span class="news-badge">New paper</span>
+          <a href="publications.html#pub-sparker">SparKer</a> &mdash; sparse, self-organizing
+          ensembles of local kernels that discover rare statistical anomalies &mdash; is on
+          arXiv, and is covered by a
+          <a href="research.html#patent">US provisional patent application</a>.
+          <span class="news-sub"><a href="https://arxiv.org/abs/2511.03095">arXiv:2511.03095</a></span>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">Jun 2025</div>
+        <div class="news-body">
+          Co-recipient, as a member of CMS, of the
+          <strong>2025 Breakthrough Prize in Fundamental Physics</strong> awarded to the LHC
+          collaborations.
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="initiative">
-      <h3>VERAIPHY &mdash; Validation &amp; Evaluation for Robust AI in Physics</h3>
-      <p>
-        I co-organize VERAIPHY, an initiative endorsed by the PHYSTAT community that is producing
-        a series of articles on statistical standards for developing, evaluating, and deploying
-        machine learning in fundamental physics. Each article takes one methodological domain and
-        asks what has to hold statistically for results obtained with it to support a discovery
-        claim &mdash; which questions to ask, which tests to run, and how to read the answers.
-      </p>
-      <p style="margin-top:.7rem">
-        My own contribution to the series is the review
-        <a href="#pub-verification">Are we ready for AI-driven discovery? AI verification before
-        the next fundamental physics breakthrough</a>, which sets out when verification is
-        essential within the statistical discovery workflow, and where machine learning&rsquo;s
-        intrinsic limits &mdash; unavoidable inductive bias, sample complexity, experimental
-        constraints &mdash; bound what can be claimed.
-      </p>
-      <div class="refs">
-        <a href="https://phystat.github.io/Website/veraiphy/">Initiative &amp; articles</a>
-        <a href="#pub-veraiphy">Opening article</a>
-        <a href="https://indico.cern.ch/event/1617006/">Workshop, Feb 2026</a>
-      </div>
+  <!-- ============================= AT A GLANCE ============================= -->
+  <section id="glance">
+    <h2>At a glance</h2>
+    <div class="stat-strip">
+      <div class="stat"><b>10</b><span>journal articles</span></div>
+      <div class="stat"><b>14</b><span>students mentored</span></div>
+      <div class="stat"><b>7</b><span>invited talks &amp; seminars</span></div>
+      <div class="stat"><b>4</b><span>school &amp; course lectures</span></div>
     </div>
 
-    <h3 style="margin-top:2.25rem">Background</h3>
+    <h4>Honors and fellowships</h4>
+    <div class="rows">
+      <div class="row">
+        <div class="row-date">2025</div>
+        <div class="row-body">
+          <strong>Breakthrough Prize in Fundamental Physics</strong>
+          <div class="sub">Awarded to the ATLAS, CMS, ALICE and LHCb collaborations; co-recipient as a member of CMS.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-date">2023&ndash;2026</div>
+        <div class="row-body">
+          <strong>IAIFI Fellowship</strong>
+          <div class="sub">NSF AI Institute for Artificial Intelligence and Fundamental Interactions. Competitively selected independent postdoctoral fellowship.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-date">2019&ndash;2023</div>
+        <div class="row-body">
+          <strong>CERN Doctoral Student Programme</strong>
+          <div class="sub">Competitively selected doctoral fellowship at CERN.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-date">2018</div>
+        <div class="row-body">
+          <strong>CERN Summer Student Programme</strong>
+          <div class="sub">Competitively selected.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= BACKGROUND ============================= -->
+  <section id="background">
+    <h2>Background</h2>
     <p class="bio">
-      I studied physics at the University of Padova, where I completed my bachelor&rsquo;s,
-      master&rsquo;s, and PhD. My interest in anomaly detection started early: my
-      undergraduate thesis applied deep learning to LHC collision data, and by my master&rsquo;s
-      I was building neural-network hypothesis tests for model-agnostic searches &mdash; work
-      that grew into the New Physics Learning Machine.
+      The question has been the same since my undergraduate thesis: how do you establish,
+      rigorously, that data contain something your model did not predict? I trained as a
+      physicist at the <a href="https://www.unipd.it/en/">University of Padova</a> and carried
+      out my doctorate at <a href="https://home.cern/">CERN</a>, the European laboratory for
+      particle physics, as a CERN Doctoral Student in the
+      <a href="https://cms.cern/">CMS experiment</a> &mdash; one of the two general-purpose
+      detectors at the Large Hadron Collider. I was advised by Marco Zanetti and Andrea Wulzer
+      and supervised at CERN by Maurizio Pierini. My thesis developed the New Physics Learning
+      Machine, a model-agnostic test for departures from the Standard Model, and confronted what
+      I still consider the central obstacle to using such methods for real measurements: keeping
+      a p-value trustworthy when the reference model itself carries systematic uncertainty. I
+      deployed the method on CMS collision data and on detector monitoring.
     </p>
     <p class="bio">
-      I spent my doctorate at CERN as a CERN doctoral student, supervised by Marco Zanetti and
-      Andrea Wulzer in Padova and working with Maurizio Pierini&rsquo;s group at CERN. There I
-      focused on making signal-agnostic searches trustworthy in practice: embedding systematic
-      uncertainties directly into the detection model so that the resulting p-values can be
-      believed, and deploying the method on real CMS data and on drift-tube data quality
-      monitoring.
+      From 2023 to 2026 I held an <a href="https://iaifi.org/">IAIFI</a> Fellowship &mdash; a
+      competitively awarded independent postdoctoral fellowship, which gave me the freedom to
+      define my own research programme across MIT and Harvard. I used it to take anomaly
+      detection beyond the setting it came from: into learned representations, into the
+      validation of generative models, and into the behaviour of large AI models. Over those
+      years I was mentored by Philip Harris at MIT and Demba Ba at Harvard SEAS, and built
+      collaborations across particle physics, statistics and machine learning.
     </p>
     <p class="bio">
-      Since 2023 I have been a postdoctoral fellow at IAIFI, working with Prof. Philip Harris at
-      MIT on statistical tools for discovery at collider and gravitational-wave experiments, and
-      with Prof. Demba Ba at Harvard SEAS on physics-inspired interpretable models for anomaly
-      detection, data validation, and the safety of generative AI. I remain a member of the CMS
-      collaboration, convene the CMS ML Innovation group, and serve as a track convener for
-      CHEP 2026.
-    </p>
-  </section>
-
-  <!-- ============================= PUBLICATIONS ============================= -->
-  <section id="publications">
-    <h2>Selected publications</h2>
-
-    <div class="entry" id="pub-veraiphy">
-      <div class="entry-title">VERaiPHY &mdash; Validation &amp; Evaluation for Robust AI in PHYsics</div>
-      <div class="authors"><span class="me">Grosso G.</span>, Winterhalder R., Brenner L., Lyons L., Plehn T.</div>
-      <div class="entry-meta">Preprint, 2026 &mdash; opening article of the PHYSTAT VERAIPHY series</div>
-      <div class="entry-links"><a href="https://arxiv.org/abs/2608.17724">arXiv:2608.17724</a></div>
-    </div>
-
-    <div class="entry" id="pub-verification">
-      <div class="entry-title">Are we ready for AI-driven discovery? AI verification before the next fundamental physics breakthrough</div>
-      <div class="authors"><span class="me">Grosso G.</span>, Mikuni V., Heinrich L.</div>
-      <div class="entry-meta">Review, 2026 &mdash; VERAIPHY initiative</div>
-      <div class="entry-links"><a href="https://arxiv.org/abs/2607.10039">arXiv:2607.10039</a></div>
-    </div>
-
-    <div class="entry" id="pub-covariant">
-      <div class="entry-title">Covariant contrastive learning for uncertainty-aware anomaly detection</div>
-      <div class="authors">Tong S., Harris P., <span class="me">Grosso G.</span></div>
-      <div class="entry-meta">Preprint, 2026</div>
-      <div class="entry-links"><a href="https://arxiv.org/abs/2609.35755">arXiv:2609.35755</a></div>
-    </div>
-
-    <div class="entry" id="pub-sparker">
-      <div class="entry-title">Sparse, self-organizing ensembles of local kernels discover rare statistical anomalies</div>
-      <div class="authors"><span class="me">Grosso G.</span>, Hindupur S.S.R., Fel T., Bright-Thonney S., Harris P., Ba D.</div>
-      <div class="entry-meta">Preprint, 2025</div>
-      <div class="entry-links"><a href="https://arxiv.org/abs/2511.03095">arXiv:2511.03095</a></div>
-    </div>
-
-    <div class="entry" id="pub-genval">
-      <div class="entry-title">Learning to validate generative models: a goodness-of-fit approach</div>
-      <div class="authors">Cappelli P., <span class="me">Grosso G.</span>, Letizia M., Reyes-Gonzalez H., Zanetti M.</div>
-      <div class="entry-meta"><span class="venue">Machine Learning: Science and Technology</span> 7, 045011 (2026)</div>
-      <div class="entry-links">
-        <a href="https://doi.org/10.1088/2632-2153/ae73e3">DOI</a>
-        <a href="https://arxiv.org/abs/2511.09118">arXiv:2511.09118</a>
-      </div>
-    </div>
-
-    <div class="entry" id="pub-autoscidact">
-      <div class="entry-title">AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing</div>
-      <div class="authors">Bright-Thonney S., Reissel C., <span class="me">Grosso G.</span>, Woodward N., Govorkova E., Novak A., Park S.E., Moreno E., Harris P.</div>
-      <div class="entry-meta"><span class="venue">Advances in Neural Information Processing Systems</span> 38, 88575&ndash;88614 (NeurIPS 2025)</div>
-      <div class="entry-links">
-        <a href="https://doi.org/10.52202/085713-2962">DOI</a>
-        <a href="https://proceedings.neurips.cc/paper_files/paper/2025/file/7ffd1ef4fc66ae446e77af9be997f158-Paper-Conference.pdf">Proceedings PDF</a>
-        <a href="https://arxiv.org/abs/2510.21935">arXiv:2510.21935</a>
-      </div>
-    </div>
-
-    <div class="entry" id="pub-contrastive">
-      <div class="entry-title">Anomaly-preserving contrastive neural embeddings for end-to-end model-independent searches at the LHC</div>
-      <div class="authors">Metzger K., Sodini M., Xu L., Aarrestad T., Govorkova E., <span class="me">Grosso G.</span>, Harris P.</div>
-      <div class="entry-meta"><span class="venue">Physical Review D</span> 112, 072011 (2025)</div>
-      <div class="entry-links"><a href="https://journals.aps.org/prd/abstract/10.1103/5n77-ynsp">DOI</a></div>
-    </div>
-
-    <div class="entry" id="pub-resonant">
-      <div class="entry-title">Robust resonant anomaly detection with NPLM</div>
-      <div class="authors"><span class="me">Grosso G.</span>, Sengupta D., Golling T., Harris P.</div>
-      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 85, 9 (2025)</div>
-      <div class="entry-links"><a href="https://link.springer.com/article/10.1140/epjc/s10052-025-14759-w">DOI</a></div>
-    </div>
-
-    <div class="entry" id="pub-multiple">
-      <div class="entry-title">Multiple testing for signal-agnostic searches for new physics with machine learning</div>
-      <div class="authors"><span class="me">Grosso G.</span>, Letizia M.</div>
-      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 85, 4 (2025)</div>
-      <div class="entry-links">
-        <a href="https://doi.org/10.1140/epjc/s10052-024-13722-5">DOI</a>
-        <a href="https://arxiv.org/abs/2408.12296">arXiv:2408.12296</a>
-      </div>
-    </div>
-
-    <div class="entry" id="pub-batches">
-      <div class="entry-title">Anomaly-aware summary statistic from data batches</div>
-      <div class="authors"><span class="me">Grosso G.</span></div>
-      <div class="entry-meta"><span class="venue">Journal of High Energy Physics</span> 2024, 93 (2024)</div>
-      <div class="entry-links">
-        <a href="https://doi.org/10.1007/JHEP12(2024)093">DOI</a>
-        <a href="https://arxiv.org/abs/2407.01249">arXiv:2407.01249</a>
-      </div>
-    </div>
-
-    <div class="entry" id="pub-gof">
-      <div class="entry-title">Goodness of fit by Neyman&ndash;Pearson testing</div>
-      <div class="authors"><span class="me">Grosso G.</span>, Letizia M., Wulzer A., Pierini M.</div>
-      <div class="entry-meta"><span class="venue">SciPost Physics</span> 16, 123 (2024)</div>
-      <div class="entry-links"><a href="https://doi.org/10.21468/SciPostPhys.16.5.123">DOI</a></div>
-    </div>
-
-    <div class="entry" id="pub-dqm">
-      <div class="entry-title">Fast kernel methods for data quality monitoring as a goodness-of-fit test</div>
-      <div class="authors"><span class="me">Grosso G.</span>, Lai N., Letizia M., Pazzini J., Rando M., Rosasco L., Wulzer A., Zanetti M.</div>
-      <div class="entry-meta"><span class="venue">Machine Learning: Science and Technology</span> 4, 035029 (2023)</div>
-      <div class="entry-links"><a href="https://doi.org/10.1088/2632-2153/acebb7">DOI</a></div>
-    </div>
-
-    <div class="entry" id="pub-nonparametric">
-      <div class="entry-title">Learning new physics efficiently with nonparametric methods</div>
-      <div class="authors">Letizia M., Losapio G., Rando M., <span class="me">Grosso G.</span>, Wulzer A., Pierini M., Zanetti M., Rosasco L.</div>
-      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 82, 879 (2022)</div>
-      <div class="entry-links"><a href="https://doi.org/10.1140/epjc/s10052-022-10830-y">DOI</a></div>
-    </div>
-
-    <div class="entry" id="pub-imperfect">
-      <div class="entry-title">Learning new physics from an imperfect machine</div>
-      <div class="authors">D&rsquo;Agnolo R.T., <span class="me">Grosso G.</span>, Pierini M., Wulzer A., Zanetti M.</div>
-      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 82, 275 (2022)</div>
-      <div class="entry-links">
-        <a href="https://doi.org/10.1140/epjc/s10052-022-10226-y">DOI</a>
-        <a href="https://arxiv.org/abs/2111.13633">arXiv:2111.13633</a>
-      </div>
-    </div>
-
-    <div class="entry" id="pub-multivariate">
-      <div class="entry-title">Learning multivariate new physics</div>
-      <div class="authors">D&rsquo;Agnolo R.T., <span class="me">Grosso G.</span>, Pierini M., Wulzer A., Zanetti M.</div>
-      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 81, 89 (2021)</div>
-      <div class="entry-links"><a href="https://doi.org/10.1140/epjc/s10052-021-08853-y">DOI</a></div>
-    </div>
-
-    <p style="margin-top:1.6rem;color:var(--muted);font-size:.9rem">
-      Full record on <a href="https://orcid.org/0000-0002-8303-3291">ORCID</a> and
-      <a href="https://scholar.google.com/citations?user=hSk0b3oAAAAJ">Google Scholar</a>.
-      See also the white paper
-      <a href="https://doi.org/10.21428/e4baedd9.70ae2021">A Virtuous Cycle: Generative AI and
-      Discovery in the Physical Sciences</a> (MIT Exploration of Generative AI, 2024).
-    </p>
-  </section>
-
-  <!-- ============================= TEACHING ============================= -->
-  <section id="teaching">
-    <h2>Teaching &amp; materials</h2>
-    <p class="lede" style="margin-bottom:1.75rem">
-      Lecture notes, slides, and hands-on exercises from schools and courses. Everything with a
-      notebook link is self-contained and free to reuse.
-    </p>
-
-    <div class="entry">
-      <div class="entry-title">Same or Different? Classical and ML methods for two-sample testing in science</div>
-      <div class="where">Guest lecture &middot; AI Methods for Science (CDS DS 595), Boston University &middot; March 2026</div>
-      <div class="entry-meta">
-        Two-sample hypothesis testing for scientific discovery: classical statistics, kernel MMD,
-        and classifier-based tests, with applications to high-energy physics and AI model validation.
-      </div>
-      <div class="entry-links">
-        <a href="lectures-bu-two-sample-testing.pdf">Slides (PDF)</a>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-title">Statistical and ML tools for anomaly detection in fundamental physics</div>
-      <div class="where">Lecture &middot; First PHYSTAT School of Statistics, &ldquo;Statistics in the era of Machine Learning&rdquo;, Nikhef &middot; November 2025</div>
-      <div class="entry-meta">
-        A survey of classical hypothesis testing alongside density estimation, representation
-        learning, and weak supervision &mdash; with emphasis on robustness, calibration, and
-        uncertainty quantification.
-      </div>
-      <!-- TODO: add the school/indico page and slide URL, e.g.
-      <div class="entry-links"><a href="URL">School page</a><a href="URL">Slides</a></div> -->
-      <div class="entry-links"><a href="https://phystat.github.io/Website/">PHYSTAT</a></div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-title">Physics-guided optimizations: inform and inspire AI models with physics principles</div>
-      <div class="where">Lecture &middot; IAIFI Summer School, Harvard University &middot; August 2025</div>
-      <div class="entry-meta">
-        Encoding physical structure into models through losses, regularization, and inductive
-        biases; and how physical principles &mdash; annealing, diffusion, entropy, energy-based
-        models &mdash; inspire modern optimization and architecture design.
-      </div>
-      <div class="entry-links">
-        <a href="lectures-iaifi-physics-guided-optimizations.pdf">Slides (PDF)</a>
-        <a href="https://iaifi.org/past-summer-schools.html#summer-school-2025">School page</a>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-title">Statistical tests for anomaly detection and scientific discovery</div>
-      <div class="where">Guest lecture &middot; MIT 8.16/8.316 Data Science in Physics &middot; April 2025</div>
-      <div class="entry-meta">
-        From classical hypothesis-testing frameworks to methods based on density estimation,
-        representation learning, and weak supervision.
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-title">Diffusion models for physics &mdash; hands-on exercises</div>
-      <div class="where">Facilitator &middot; IAIFI Summer School, MIT &middot; August 2024</div>
-      <div class="entry-meta">
-        Jupyter notebooks covering diffusion models, variational autoencoders, and validation
-        methods, written for the school&rsquo;s hands-on sessions.
-      </div>
-      <div class="entry-links">
-        <a href="https://github.com/GaiaGrosso/generative-models-tutorials">Notebooks on GitHub</a>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ============================= TALKS ============================= -->
-  <section id="talks">
-    <h2>Selected talks</h2>
-
-    <div class="entry">
-      <div class="entry-title">Adaptive and interpretable two-sample test as a batch-level tool for AI safety</div>
-      <div class="where">Poster &middot; Mechanistic Interpretability Workshop, ICML &middot; Seoul, July 2026</div>
-      <div class="entry-links"><a href="https://openreview.net/pdf?id=CAmXdNUaeb">Paper</a></div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-title">Detecting statistical anomalies with sparse, self-organizing ensembles of local kernels</div>
-      <div class="where">Invited speaker &middot; Statistical Physics for Ambitious Interpretability &middot; Cambridge, MA, April 2026</div>
-      <div class="entry-links"><a href="https://lbg251.github.io/Spring-Workshop/#speakers">Workshop</a></div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-title">From high dimensions to statistical discovery: anomaly detection at scale in the era of latent spaces</div>
-      <div class="where">Invited talk &middot; STAMPS&ndash;NSBI Workshop, Carnegie Mellon University &middot; October 2025</div>
-      <div class="entry-links"><a href="https://youtu.be/YNwqPL29XYw">Video</a></div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-title">Anomaly detection in the era of latent spaces</div>
-      <div class="where">Talk &middot; Building Big or Building Smart (MIAPbP), TU Munich &middot; September 2025</div>
-      <div class="entry-links"><a href="https://indico.ph.tum.de/event/7932/contributions/10788/attachments/6957/9661/Grosso_Slides.pdf">Slides</a></div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-title">Statistical tests for anomaly detection at the LHC</div>
-      <div class="where">Invited talk &middot; PHYSTAT &mdash; &ldquo;Statistics meets ML&rdquo;, Imperial College London &middot; September 2024</div>
-      <div class="entry-links"><a href="https://indico.cern.ch/event/1407421/timetable/">Programme</a></div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-title">How good is the Standard Model? Hunting anomalies in the LHC data and beyond</div>
-      <div class="where">Public talk &middot; Institute of Advanced Study, University of Geneva &middot; September 2023</div>
-      <div class="entry-links"><a href="https://partphys-indico.unige.ch/event/1324/">Event</a></div>
-    </div>
-
-    <p style="margin-top:1.5rem;color:var(--muted);font-size:.9rem">
-      Full list of talks and posters in my <a href="cv.pdf">CV</a>.
-    </p>
-  </section>
-
-  <!-- ============================= SOFTWARE ============================= -->
-  <section id="software">
-    <h2>Software</h2>
-
-    <div class="project">
-      <h3>NPLM &mdash; New Physics Learning Machine</h3>
-      <p>
-        A machine-learning implementation of the likelihood-ratio test for signal-agnostic
-        anomaly detection: returns a calibrated p-value without specifying the signal in
-        advance, and reconstructs the most discrepant regions of phase space.
-      </p>
-      <div class="tags"><span class="tag">hypothesis testing</span><span class="tag">PyTorch</span><span class="tag">interpretable</span></div>
-    </div>
-
-    <div class="project">
-      <h3>SparKer</h3>
-      <p>
-        Sparse, self-organizing ensembles of local kernels for detecting rare anomalies in
-        learned representations. Sparsity, locality, and competition produce geometrically
-        interpretable detection experts with formal learning-dynamics guarantees.
-      </p>
-      <div class="tags"><span class="tag">kernel methods</span><span class="tag">interpretability</span><span class="tag">AI safety</span></div>
-    </div>
-
-    <div class="project">
-      <h3>Generative model validation</h3>
-      <p>
-        Goodness-of-fit tooling for generative surrogates: tests that both detect deviations
-        and diagnose the regions where a generative model underperforms, with epistemic
-        uncertainty propagated into the test.
-      </p>
-      <div class="tags"><span class="tag">generative models</span><span class="tag">validation</span></div>
-    </div>
-
-    <p style="color:var(--muted);font-size:.9rem;margin-top:1.25rem">
-      Code and teaching notebooks at <a href="https://github.com/GaiaGrosso">github.com/GaiaGrosso</a>.
+      I am now a Postdoctoral Associate at the
+      <a href="https://lns.mit.edu/">MIT Laboratory for Nuclear Science</a>. I remain a member of
+      the <a href="https://cms.cern/">CMS collaboration</a>, having convened its ML Innovation
+      group from 2023 to 2025, and I serve on the organizing team and Advisory Committee of
+      <a href="https://phystat.github.io/Website/">PHYSTAT</a>, the international forum where
+      particle physicists and statisticians work out how inference should be done in the field.
+      I co-organize <a href="research.html#veraiphy">VERAIPHY</a>, which is setting out the
+      statistical standards I would like work in this field to be held to.
     </p>
   </section>
 
@@ -716,9 +292,10 @@
     <div class="contact-grid">
       <div class="contact-row"><span>Email</span><span><a href="mailto:gaiag795@mit.edu">gaiag795@mit.edu</a></span></div>
       <div class="contact-row"><span></span><span><a href="mailto:ggrosso@seas.harvard.edu">ggrosso@seas.harvard.edu</a></span></div>
-      <div class="contact-row"><span>CV</span><span><a href="cv.pdf">cv.pdf</a></span></div>
+      <div class="contact-row"><span>CV</span><span><a href="cv.pdf">cv.pdf</a> &middot; updated October 2026</span></div>
       <div class="contact-row"><span>ORCID</span><span><a href="https://orcid.org/0000-0002-8303-3291">0000-0002-8303-3291</a></span></div>
       <div class="contact-row"><span>GitHub</span><span><a href="https://github.com/GaiaGrosso">@GaiaGrosso</a></span></div>
+      <div class="contact-row"><span>LinkedIn</span><span><a href="https://www.linkedin.com/in/gaia-grosso-a04185155">gaia-grosso</a></span></div>
       <div class="contact-row"><span>Based in</span><span>Cambridge, MA</span></div>
     </div>
     <p style="margin-top:1.5rem;color:var(--muted);font-size:.92rem">
@@ -730,28 +307,10 @@
 </main>
 
 <footer>
-  <span>&copy; <span id="year">2026</span> Gaia Grosso</span>
+  <span>&copy; <span class="year">2026</span> Gaia Grosso</span>
   <span>Built with plain HTML &amp; CSS &middot; hosted on GitHub Pages</span>
 </footer>
 
-<script>
-  (function () {
-    var root = document.documentElement;
-    var saved = null;
-    try { saved = localStorage.getItem("theme"); } catch (e) {}
-    var dark = saved ? saved === "dark"
-                     : window.matchMedia("(prefers-color-scheme: dark)").matches;
-    root.setAttribute("data-theme", dark ? "dark" : "light");
-
-    document.getElementById("theme-toggle").addEventListener("click", function () {
-      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
-      try { localStorage.setItem("theme", next); } catch (e) {}
-    });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-  })();
-</script>
-
+<script src="theme.js"></script>
 </body>
 </html>
