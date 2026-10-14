@@ -157,6 +157,29 @@ p { margin: 0 0 1rem; }
 .thread { scroll-margin-top: 5.5rem; }
 .thread:target > h3 { color: var(--accent); }
 
+/* category jump-links at the top of Publications */
+.jumpbar { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.4rem 0 1.5rem; }
+.jumpbar a {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-size: .84rem; font-weight: 500;
+  padding: .3rem .75rem; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--text);
+  transition: background .18s, border-color .18s, color .18s;
+}
+.jumpbar a:hover {
+  background: var(--accent-soft); border-color: var(--accent);
+  color: var(--accent); text-decoration: none;
+}
+.jumpbar a span {
+  font-size: .74rem; font-variant-numeric: tabular-nums;
+  padding: 0 .32rem; border-radius: 4px;
+  background: var(--accent-soft); color: var(--accent);
+}
+.jumpbar a:hover span { background: var(--surface); }
+
+/* section headings clear the sticky nav when jumped to */
+h4[id] { scroll-margin-top: 5.5rem; }
+
 /* ---------------- research threads ---------------- */
 .threads { display: grid; gap: 1.4rem; }
 .thread { border-left: 2px solid var(--line); padding-left: 1rem; }
