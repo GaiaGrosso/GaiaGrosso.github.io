@@ -10,13 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="publications">
 
 <header class="nav">
   <div class="nav-inner">
     <a class="nav-name" href="index.html">Gaia Grosso</a>
     <nav class="nav-links">
       <a href="index.html">Home</a>
+      <a href="about.html">About</a>
       <a href="research.html">Research</a>
       <a href="publications.html" class="here">Publications</a>
       <a href="talks.html">Talks</a>
@@ -37,14 +38,61 @@
       <a href="https://inspirehep.net/authors/1799404">INSPIRE-HEP</a>, and
       <a href="https://scholar.google.com/citations?user=hSk0b3oAAAAJ">Google Scholar</a>.
     </p>
-    <nav class="jumpbar" aria-label="Publication categories">
-      <a href="#journal">Journal articles</a>
-      <a href="#conference">Conference papers</a>
-      <a href="#review-stage">Preprints</a>
-      <a href="#reviews">Reviews &amp; white papers</a>
-      <a href="#workshop">Workshop papers</a>
-      <a href="#collaboration">Collaboration</a>
-      <a href="#patent">Patent</a>
+    <nav class="topicrow topicrow-7" aria-label="Publication categories">
+      <a href="#journal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 5.3c2.9-1.2 5.8-1.2 8.7 0v14c-2.9-1.2-5.8-1.2-8.7 0z"/>
+          <path d="M21 5.3c-2.9-1.2-5.8-1.2-8.7 0v14c2.9-1.2 5.8-1.2 8.7 0z"/>
+        </svg>
+        <b>Journal</b>
+      </a>
+      <a href="#conference">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3.5" width="18" height="12" rx="1.6"/>
+          <path d="M12 15.5V20m-3.5 0h7"/>
+          <path d="M7 11.5l3-3.2 2.4 2L17 6.5"/>
+        </svg>
+        <b>Conference</b>
+      </a>
+      <a href="#review-stage">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 2.8h8l4 4v14.4H6z" stroke-dasharray="3 2.2"/>
+          <path d="M14 2.8v4h4"/>
+        </svg>
+        <b>Preprints</b>
+      </a>
+      <a href="#reviews">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6z"/>
+          <circle cx="12" cy="12" r="2.4"/>
+        </svg>
+        <b>Reviews</b>
+      </a>
+      <a href="#workshop">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="4" y="2.8" width="16" height="12" rx="1.5"/>
+          <path d="M7.5 7h6M7.5 10.5h9"/>
+          <path d="M8 21.2 12 15l4 6.2"/>
+        </svg>
+        <b>Workshops</b>
+      </a>
+      <a href="#collaboration">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="5.6" r="2.6"/>
+          <circle cx="5.4" cy="17.4" r="2.6"/>
+          <circle cx="18.6" cy="17.4" r="2.6"/>
+          <path d="M10.3 7.9 6.9 14.9M13.7 7.9l3.4 7M8.3 18.4h7.4"/>
+        </svg>
+        <b>Collaboration</b>
+      </a>
+      <a href="#patent">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="8.6" r="5.8"/>
+          <path d="m9.6 8.6 1.7 1.7 3.2-3.4"/>
+          <path d="M8.6 13.6 7.4 21.5 12 19.2l4.6 2.3-1.2-7.9"/>
+        </svg>
+        <b>Patent</b>
+      </a>
     </nav>
 
     <p class="key">
@@ -59,83 +107,61 @@
     <div class="entry" id="pub-genval">
       <div class="entry-title">Learning to validate generative models: a goodness-of-fit approach</div>
       <div class="authors">Cappelli P.<sup>&dagger;</sup>, <span class="me">Grosso G.</span>, Letizia M., Reyes-Gonzalez H., Zanetti M.</div>
-      <div class="entry-meta"><span class="venue">Machine Learning: Science and Technology</span> 7, 045011 (2026)</div>
-      <div class="entry-links">
-        <a href="https://doi.org/10.1088/2632-2153/ae73e3">DOI</a>
-        <a href="https://arxiv.org/abs/2511.09118">arXiv:2511.09118</a>
-      </div>
+      <div class="entry-meta"><span class="venue">Machine Learning: Science and Technology</span> 7, 045011 (2026) <span class="dot">&middot;</span> <a href="https://doi.org/10.1088/2632-2153/ae73e3">DOI</a> <span class="dot">&middot;</span> <a href="https://arxiv.org/abs/2511.09118">arXiv:2511.09118</a></div>
     </div>
 
     <div class="entry" id="pub-contrastive">
       <div class="entry-title">Anomaly-preserving contrastive neural embeddings for end-to-end model-independent searches at the LHC</div>
       <div class="authors">Metzger K.<sup>&dagger;</sup>, Sodini M., Xu L.<sup>&dagger;</sup>, Aarrestad T., Govorkova E., <span class="me">Grosso G.</span>, Harris P.</div>
-      <div class="entry-meta"><span class="venue">Physical Review D</span> 112, 072011 (2025)</div>
-      <div class="entry-links"><a href="https://journals.aps.org/prd/abstract/10.1103/5n77-ynsp">DOI</a></div>
+      <div class="entry-meta"><span class="venue">Physical Review D</span> 112, 072011 (2025) <span class="dot">&middot;</span> <a href="https://journals.aps.org/prd/abstract/10.1103/5n77-ynsp">DOI</a></div>
     </div>
 
     <div class="entry" id="pub-resonant">
       <div class="entry-title">Robust resonant anomaly detection with NPLM</div>
       <div class="authors"><span class="me">Grosso G.</span>, Sengupta D., Golling T., Harris P.</div>
-      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 85 (2025)</div>
-      <div class="entry-links"><a href="https://link.springer.com/article/10.1140/epjc/s10052-025-14759-w">DOI</a></div>
+      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 85 (2025) <span class="dot">&middot;</span> <a href="https://link.springer.com/article/10.1140/epjc/s10052-025-14759-w">DOI</a></div>
     </div>
 
     <div class="entry" id="pub-multiple">
       <div class="entry-title">Multiple testing for signal-agnostic searches for new physics with machine learning</div>
       <div class="authors"><span class="me">Grosso G.</span><sup>*</sup>, Letizia M.<sup>*</sup></div>
-      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 85, 4 (2025)</div>
-      <div class="entry-links">
-        <a href="https://doi.org/10.1140/epjc/s10052-024-13722-5">DOI</a>
-        <a href="https://arxiv.org/abs/2408.12296">arXiv:2408.12296</a>
-      </div>
+      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 85, 4 (2025) <span class="dot">&middot;</span> <a href="https://doi.org/10.1140/epjc/s10052-024-13722-5">DOI</a> <span class="dot">&middot;</span> <a href="https://arxiv.org/abs/2408.12296">arXiv:2408.12296</a></div>
     </div>
 
     <div class="entry" id="pub-batches">
       <div class="entry-title">Anomaly-aware summary statistic from data batches</div>
       <div class="authors"><span class="me">Grosso G.</span> <span class="badge">single author</span></div>
-      <div class="entry-meta"><span class="venue">Journal of High Energy Physics</span> 12 (2024) 093</div>
-      <div class="entry-links">
-        <a href="https://doi.org/10.1007/JHEP12(2024)093">DOI</a>
-        <a href="https://arxiv.org/abs/2407.01249">arXiv:2407.01249</a>
-      </div>
+      <div class="entry-meta"><span class="venue">Journal of High Energy Physics</span> 12 (2024) 093 <span class="dot">&middot;</span> <a href="https://doi.org/10.1007/JHEP12(2024)093">DOI</a> <span class="dot">&middot;</span> <a href="https://arxiv.org/abs/2407.01249">arXiv:2407.01249</a></div>
     </div>
 
     <div class="entry" id="pub-gof">
       <div class="entry-title">Goodness of fit by Neyman&ndash;Pearson testing</div>
       <div class="authors"><span class="me">Grosso G.</span>, Letizia M., Wulzer A., Pierini M.</div>
-      <div class="entry-meta"><span class="venue">SciPost Physics</span> 16, 123 (2024)</div>
-      <div class="entry-links"><a href="https://doi.org/10.21468/SciPostPhys.16.5.123">DOI</a></div>
+      <div class="entry-meta"><span class="venue">SciPost Physics</span> 16, 123 (2024) <span class="dot">&middot;</span> <a href="https://doi.org/10.21468/SciPostPhys.16.5.123">DOI</a></div>
     </div>
 
     <div class="entry" id="pub-dqm">
       <div class="entry-title">Fast kernel methods for data quality monitoring as a goodness-of-fit test</div>
       <div class="authors"><span class="me">Grosso G.</span>, Lai N.<sup>&dagger;</sup>, Letizia M., Pazzini J., Rando M., Rosasco L., Wulzer A., Zanetti M.<sup>α</sup></div>
-      <div class="entry-meta"><span class="venue">Machine Learning: Science and Technology</span> 4, 035029 (2023)</div>
-      <div class="entry-links"><a href="https://doi.org/10.1088/2632-2153/acebb7">DOI</a></div>
+      <div class="entry-meta"><span class="venue">Machine Learning: Science and Technology</span> 4, 035029 (2023) <span class="dot">&middot;</span> <a href="https://doi.org/10.1088/2632-2153/acebb7">DOI</a></div>
     </div>
 
     <div class="entry" id="pub-nonparametric">
       <div class="entry-title">Learning new physics efficiently with nonparametric methods</div>
       <div class="authors">Letizia M., Losapio G., Rando M., <span class="me">Grosso G.</span>, Wulzer A., Pierini M., Zanetti M., Rosasco L.</div>
-      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 82, 879 (2022)</div>
-      <div class="entry-links"><a href="https://doi.org/10.1140/epjc/s10052-022-10830-y">DOI</a></div>
+      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 82, 879 (2022) <span class="dot">&middot;</span> <a href="https://doi.org/10.1140/epjc/s10052-022-10830-y">DOI</a></div>
     </div>
 
     <div class="entry" id="pub-imperfect">
       <div class="entry-title">Learning new physics from an imperfect machine</div>
       <div class="authors">D&rsquo;Agnolo R.T., <span class="me">Grosso G.</span>, Pierini M., Wulzer A., Zanetti M.<sup>α</sup></div>
-      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 82, 275 (2022)</div>
-      <div class="entry-links">
-        <a href="https://doi.org/10.1140/epjc/s10052-022-10226-y">DOI</a>
-        <a href="https://arxiv.org/abs/2111.13633">arXiv:2111.13633</a>
-      </div>
+      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 82, 275 (2022) <span class="dot">&middot;</span> <a href="https://doi.org/10.1140/epjc/s10052-022-10226-y">DOI</a> <span class="dot">&middot;</span> <a href="https://arxiv.org/abs/2111.13633">arXiv:2111.13633</a></div>
     </div>
 
     <div class="entry" id="pub-multivariate">
       <div class="entry-title">Learning multivariate new physics</div>
       <div class="authors">D&rsquo;Agnolo R.T., <span class="me">Grosso G.</span>, Pierini M., Wulzer A., Zanetti M.<sup>α</sup></div>
-      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 81, 89 (2021)</div>
-      <div class="entry-links"><a href="https://doi.org/10.1140/epjc/s10052-021-08853-y">DOI</a></div>
+      <div class="entry-meta"><span class="venue">European Physical Journal C</span> 81, 89 (2021) <span class="dot">&middot;</span> <a href="https://doi.org/10.1140/epjc/s10052-021-08853-y">DOI</a></div>
     </div>
 
     <h4 id="conference">Peer-reviewed conference papers and proceedings</h4>
@@ -143,19 +169,13 @@
     <div class="entry" id="pub-autoscidact">
       <div class="entry-title">AutoSciDACT: Automated scientific discovery through contrastive embedding and hypothesis testing</div>
       <div class="authors">Bright-Thonney S., Reissel C., <span class="me">Grosso G.</span>, Woodward N.<sup>&dagger;</sup>, Govorkova E., Novak A., Park S.E., Moreno E., Harris P.</div>
-      <div class="entry-meta"><span class="venue">Advances in Neural Information Processing Systems</span> 38, 88575&ndash;88614 (NeurIPS 2025)</div>
-      <div class="entry-links">
-        <a href="https://doi.org/10.52202/085713-2962">DOI</a>
-        <a href="https://proceedings.neurips.cc/paper_files/paper/2025/file/7ffd1ef4fc66ae446e77af9be997f158-Paper-Conference.pdf">Proceedings PDF</a>
-        <a href="https://arxiv.org/abs/2510.21935">arXiv:2510.21935</a>
-      </div>
+      <div class="entry-meta"><span class="venue">Advances in Neural Information Processing Systems</span> 38, 88575&ndash;88614 (NeurIPS 2025) <span class="dot">&middot;</span> <a href="https://doi.org/10.52202/085713-2962">DOI</a> <span class="dot">&middot;</span> <a href="https://proceedings.neurips.cc/paper_files/paper/2025/file/7ffd1ef4fc66ae446e77af9be997f158-Paper-Conference.pdf">Proceedings PDF</a> <span class="dot">&middot;</span> <a href="https://arxiv.org/abs/2510.21935">arXiv:2510.21935</a></div>
     </div>
 
     <div class="entry" id="pub-triggerless">
       <div class="entry-title">Triggerless data acquisition pipeline for machine learning based statistical anomaly detection</div>
       <div class="authors"><span class="me">Grosso G.</span>, Lai N.<sup>&dagger;</sup>, Migliorini M., Pazzini J., Triossi A., Zanetti M., Zucchetta A.<sup>α</sup></div>
-      <div class="entry-meta"><span class="venue">EPJ Web of Conferences</span> 295, 02033 (2024) &mdash; Proceedings of CHEP 2023</div>
-      <div class="entry-links"><a href="https://doi.org/10.1051/epjconf/202429502033">DOI</a></div>
+      <div class="entry-meta"><span class="venue">EPJ Web of Conferences</span> 295, 02033 (2024) &mdash; Proceedings of CHEP 2023 <span class="dot">&middot;</span> <a href="https://doi.org/10.1051/epjconf/202429502033">DOI</a></div>
     </div>
 
     <h4 id="review-stage">Preprints and papers under review</h4>
@@ -165,22 +185,19 @@
     <div class="entry" id="pub-covariant">
       <div class="entry-title">Covariant contrastive learning for uncertainty-aware anomaly detection</div>
       <div class="authors">Tong S.<sup>&dagger;</sup>, Harris P., <span class="me">Grosso G.</span></div>
-      <div class="entry-meta">Preprint, 2026</div>
-      <div class="entry-links"><a href="https://arxiv.org/abs/2609.35755">arXiv:2609.35755</a></div>
+      <div class="entry-meta">Preprint, 2026 <span class="dot">&middot;</span> <a href="https://arxiv.org/abs/2609.35755">arXiv:2609.35755</a></div>
     </div>
 
     <div class="entry" id="pub-sparker">
       <div class="entry-title">Sparse, self-organizing ensembles of local kernels discover rare statistical anomalies</div>
       <div class="authors"><span class="me">Grosso G.</span>, Hindupur S.S.R.<sup>&dagger;</sup>, Fel T., Bright-Thonney S., Harris P., Ba D.</div>
-      <div class="entry-meta">Preprint, 2025</div>
-      <div class="entry-links"><a href="https://arxiv.org/abs/2511.03095">arXiv:2511.03095</a></div>
+      <div class="entry-meta">Preprint, 2025 <span class="dot">&middot;</span> <a href="https://arxiv.org/abs/2511.03095">arXiv:2511.03095</a></div>
     </div>
 
     <div class="entry" id="pub-manifold">
       <div class="entry-title">Product manifold machine learning for physics</div>
       <div class="authors">Woodward N.S.<sup>&dagger;</sup>, Park S.E., <span class="me">Grosso G.</span>, Krupa J., Harris P.</div>
-      <div class="entry-meta">Preprint, 2024</div>
-      <div class="entry-links"><a href="https://arxiv.org/abs/2412.07033">arXiv:2412.07033</a></div>
+      <div class="entry-meta">Preprint, 2024 <span class="dot">&middot;</span> <a href="https://arxiv.org/abs/2412.07033">arXiv:2412.07033</a></div>
     </div>
 
     <h4 id="reviews">Reviews, perspectives and white papers</h4>
@@ -188,25 +205,19 @@
     <div class="entry" id="pub-veraiphy">
       <div class="entry-title">VERAIPHY &mdash; Validation &amp; Evaluation for Robust AI in PHYsics</div>
       <div class="authors"><span class="me">Grosso G.</span>, Winterhalder R., Brenner L., Lyons L., Plehn T.</div>
-      <div class="entry-meta">Opening article of the PHYSTAT VERAIPHY series, 2026</div>
-      <div class="entry-links">
-        <a href="https://arxiv.org/abs/2608.17724">arXiv:2608.17724</a>
-        <a href="https://phystat.github.io/Website/veraiphy/">Series</a>
-      </div>
+      <div class="entry-meta">Opening article of the PHYSTAT VERAIPHY series, 2026 <span class="dot">&middot;</span> <a href="https://arxiv.org/abs/2608.17724">arXiv:2608.17724</a> <span class="dot">&middot;</span> <a href="https://phystat.github.io/Website/veraiphy/">Series</a></div>
     </div>
 
     <div class="entry" id="pub-verification">
       <div class="entry-title">Are we ready for AI-driven discovery? AI verification before the next fundamental physics breakthrough</div>
       <div class="authors"><span class="me">Grosso G.</span>, Mikuni V., Heinrich L.</div>
-      <div class="entry-meta">Review, VERAIPHY series, 2026 &mdash; to be submitted to <span class="venue">SciPost Physics</span></div>
-      <div class="entry-links"><a href="https://arxiv.org/abs/2607.10039">arXiv:2607.10039</a></div>
+      <div class="entry-meta">Review, VERAIPHY series, 2026 &mdash; to be submitted to <span class="venue">SciPost Physics</span> <span class="dot">&middot;</span> <a href="https://arxiv.org/abs/2607.10039">arXiv:2607.10039</a></div>
     </div>
 
     <div class="entry" id="pub-virtuous">
       <div class="entry-title">A virtuous cycle: generative AI and discovery in the physical sciences</div>
       <div class="authors"><span class="me">Grosso G.</span>, Harris P., Mishra-Sharma S., Shanahan P.</div>
-      <div class="entry-meta"><span class="venue">An MIT Exploration of Generative AI</span> (2024)</div>
-      <div class="entry-links"><a href="https://doi.org/10.21428/e4baedd9.70ae2021">DOI</a></div>
+      <div class="entry-meta"><span class="venue">An MIT Exploration of Generative AI</span> (2024) <span class="dot">&middot;</span> <a href="https://doi.org/10.21428/e4baedd9.70ae2021">DOI</a></div>
     </div>
 
     <h4 id="workshop">Workshop papers (non-archival)</h4>
@@ -214,22 +225,19 @@
     <div class="entry" id="pub-batchsafety">
       <div class="entry-title">Adaptive and interpretable two-sample test as a batch-level tool for AI safety</div>
       <div class="authors"><span class="me">Grosso G.</span>, Marin-Llobet A., Ba D.</div>
-      <div class="entry-meta">ICML 2026 Workshop on Mechanistic Interpretability, Seoul</div>
-      <div class="entry-links"><a href="https://openreview.net/pdf?id=CAmXdNUaeb">Paper</a></div>
+      <div class="entry-meta">ICML 2026 Workshop on Mechanistic Interpretability, Seoul <span class="dot">&middot;</span> <a href="https://openreview.net/pdf?id=CAmXdNUaeb">Paper</a></div>
     </div>
 
     <div class="entry" id="pub-uqpipeline">
       <div class="entry-title">An end-to-end pipeline for uncertainty-aware validation of generative AI</div>
       <div class="authors">Badaracco G.<sup>&dagger;</sup>, Benevedes S., <span class="me">Grosso G.</span>, Reissel C., Aarrestad T., Harris P.</div>
-      <div class="entry-meta">NeurIPS 2025 Workshop on Machine Learning and the Physical Sciences, San Diego</div>
-      <div class="entry-links"><a href="https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_221.pdf">Paper</a></div>
+      <div class="entry-meta">NeurIPS 2025 Workshop on Machine Learning and the Physical Sciences, San Diego <span class="dot">&middot;</span> <a href="https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_221.pdf">Paper</a></div>
     </div>
 
     <div class="entry" id="pub-dictionaries">
       <div class="entry-title">Learning dictionaries of new physics with sparse local kernels</div>
       <div class="authors"><span class="me">Grosso G.</span>, Govorkova E., Harris P., Moreno E., Raikman R.</div>
-      <div class="entry-meta">NeurIPS 2024 Workshop on Machine Learning and the Physical Sciences, Vancouver</div>
-      <div class="entry-links"><a href="https://ml4physicalsciences.github.io/2024/files/NeurIPS_ML4PS_2024_146.pdf">Paper</a></div>
+      <div class="entry-meta">NeurIPS 2024 Workshop on Machine Learning and the Physical Sciences, Vancouver <span class="dot">&middot;</span> <a href="https://ml4physicalsciences.github.io/2024/files/NeurIPS_ML4PS_2024_146.pdf">Paper</a></div>
     </div>
 
     <h4 id="collaboration">Collaboration papers</h4>

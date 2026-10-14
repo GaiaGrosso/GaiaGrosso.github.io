@@ -14,13 +14,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="home">
 
 <header class="nav">
   <div class="nav-inner">
     <a class="nav-name" href="index.html">Gaia Grosso</a>
     <nav class="nav-links">
       <a href="index.html" class="here">Home</a>
+      <a href="about.html">About</a>
       <a href="research.html">Research</a>
       <a href="publications.html">Publications</a>
       <a href="talks.html">Talks</a>
@@ -43,75 +44,99 @@
       </p>
       <p class="pull">Learning begins where expectation fails.</p>
       <p class="lede">
-        I develop statistical methods for detecting when data deviate from a reference model in
-        high-dimensional settings &mdash; with calibrated error control, and with enough
-        interpretability to say <em>where</em> and <em>why</em> the deviation occurred. I apply
-        them to scientific discovery in particle physics, and to auditing, monitoring, and
-        interpreting large AI models.
+        I am a physicist working across statistics and machine learning. I build methods that
+        decide &mdash; rigorously &mdash; when data contain something a model did not predict.
+        I did my PhD at <a href="https://home.cern/">CERN</a>, and after that joined
+        <a href="https://iaifi.org/">IAIFI</a> as a postdoctoral Fellow, working with
+        <a href="https://violatingcp.github.io/">Philip Harris</a>
+        (<a href="https://lns.mit.edu/">MIT LNS</a>) and
+        <a href="https://crisp.seas.harvard.edu/">Demba Ba</a>
+        (<a href="https://seas.harvard.edu/">Harvard SEAS</a>).
       </p>
-      <div class="links">
-        <a class="primary" href="cv.pdf">CV (PDF)</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
+      <!-- Remove this banner once the search is over. -->
+      <p class="market">
+        <strong>I am on the 2026&ndash;27 faculty job market.</strong>
+        I am looking for positions where statistical methodology, machine learning, and the
+        physical sciences meet &mdash;
+        <a href="mailto:gaiag795@mit.edu">get in touch</a>.
+      </p>
+    </div>
+
+    <div class="hero-side">
+      <img class="avatar" src="photo.jpg" alt="Gaia Grosso" onerror="this.style.display='none'">
+      <div class="elsewhere">
         <a href="mailto:gaiag795@mit.edu">Email</a>
+        <a href="cv.pdf">CV</a>
         <a href="https://scholar.google.com/citations?user=hSk0b3oAAAAJ">Scholar</a>
         <a href="https://inspirehep.net/authors/1799404">INSPIRE</a>
         <a href="https://orcid.org/0000-0002-8303-3291">ORCID</a>
         <a href="https://github.com/GaiaGrosso">GitHub</a>
         <a href="https://www.linkedin.com/in/gaia-grosso-a04185155">LinkedIn</a>
       </div>
-      <!-- Remove this banner once the search is over. -->
-      <p class="market">
-        <strong>I am on the 2026&ndash;27 faculty job market.</strong>
-        I am looking for positions where statistical methodology, machine learning, and the
-        physical sciences meet. Please get in touch &mdash;
-        <a href="mailto:gaiag795@mit.edu">gaiag795@mit.edu</a>.
-      </p>
     </div>
-    <img class="avatar" src="photo.jpg" alt="Gaia Grosso" onerror="this.style.display='none'">
   </section>
 
-  <!-- ============================= RESEARCH SUMMARY ============================= -->
+
+  <!-- ============================= RESEARCH ============================= -->
   <section id="research-summary">
     <h2>Research</h2>
     <p>
       An anomaly is not always visible one observation at a time. A loaded die looks fair on any
       single throw and gives itself away only in the frequencies of many &mdash; and the same
-      holds for fraud inside a plausible transaction history, for new fundamental interactions
-      distorting the distributions of particle collisions, or for a language model whose
-      behaviour has drifted in ways no single output reveals. Asking <em>does what we observe
-      match what our model of the world predicts?</em> is one statistical problem, and classical
-      tests answer it rigorously but lose power when deviations are rare or buried among
-      uninformative features.
-    </p>
-    <p>
-      My research builds tests that scale to the complexity of modern data without giving up
-      what makes a detection usable: a calibrated p-value, an account of which structure in the
-      data produced it, and robustness to the uncertainties of the reference model itself.
+      holds for new fundamental interactions distorting the distributions of particle collisions,
+      or for a language model whose behaviour has drifted in ways no single output reveals.
+      Classical tests answer that question rigorously but lose power when deviations are rare or
+      buried among uninformative features. I build tests that scale without giving up the
+      calibrated p-value or the account of what produced it.
     </p>
 
-    <div class="teasers">
-      <a class="teaser" href="research.html#robustness">
-        <b>Robust anomaly tests under systematic uncertainty</b>
-        <span>Uncertainties built into the test rather than corrected for afterwards.</span>
+    <nav class="topicrow" aria-label="Research topics">
+      <a href="research.html#robustness">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 19c4 0 4-12 9-12s5 12 9 12"/>
+          <path d="M2 15.5c4 0 4-9 9-9s5 9 9 9" opacity=".4"/>
+          <path d="M17 3v18" stroke-dasharray="2 2.5"/>
+        </svg>
+        <b>Robustness &amp; uncertainty</b>
       </a>
-      <a class="teaser" href="research.html#architectures">
-        <b>Physics-inspired architectures and interpretability</b>
-        <span>Sparsity, locality, and competition as the source of interpretability.</span>
+      <a href="research.html#architectures">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="8" cy="9" r="4.2"/>
+          <circle cx="16" cy="15" r="3.2"/>
+          <circle cx="8" cy="9" r="1.3" fill="currentColor" stroke="none"/>
+          <circle cx="16" cy="15" r="1.1" fill="currentColor" stroke="none"/>
+          <circle cx="18.5" cy="5.5" r="1" fill="currentColor" stroke="none" opacity=".45"/>
+        </svg>
+        <b>Interpretable architectures</b>
       </a>
-      <a class="teaser" href="research.html#scale">
-        <b>Detection at scale, from raw data to p-values</b>
-        <span>Representation learning paired with interpretable likelihood-ratio tests.</span>
+      <a href="research.html#scale">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="4" cy="5" r="1.2" fill="currentColor" stroke="none"/>
+          <circle cx="4" cy="12" r="1.2" fill="currentColor" stroke="none"/>
+          <circle cx="4" cy="19" r="1.2" fill="currentColor" stroke="none"/>
+          <path d="M7 5.6 12.5 12 7 18.4"/>
+          <path d="M13 12h8m-3-3 3 3-3 3"/>
+        </svg>
+        <b>Detection at scale</b>
       </a>
-      <a class="teaser" href="research.html#generative">
-        <b>Validating generative models</b>
-        <span>Deciding when a generative surrogate can stand in for the real thing.</span>
+      <a href="research.html#generative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="12" r="6"/>
+          <circle cx="15" cy="12" r="6" stroke-dasharray="3 2.5"/>
+        </svg>
+        <b>Generative validation</b>
       </a>
-      <a class="teaser" href="research.html#ai-models">
-        <b>Auditing and monitoring large AI models</b>
-        <span>Detecting and characterizing harmful behaviour and domain drift.</span>
+      <a href="research.html#ai-models">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="5.5" height="5.5" rx="1.2" opacity=".45"/>
+          <rect x="3" y="15.5" width="5.5" height="5.5" rx="1.2" opacity=".45"/>
+          <rect x="15.5" y="3" width="5.5" height="5.5" rx="1.2" opacity=".45"/>
+          <rect x="15.5" y="15.5" width="5.5" height="5.5" rx="1.2" opacity=".45"/>
+          <rect x="9.25" y="9.25" width="5.5" height="5.5" rx="1.2" fill="currentColor" stroke="none"/>
+        </svg>
+        <b>Auditing AI models</b>
       </a>
-    </div>
+    </nav>
   </section>
 
   <!-- ============================= NEWS ============================= -->
@@ -132,16 +157,16 @@
       <div class="news-item">
         <div class="news-date">Sep 2026</div>
         <div class="news-body">
-          Invited talk at the <a href="talks.html">LHC Physics Center, Fermilab</a>
-          &mdash; <em>Discovery through the lens of AI: scaling anomaly detection with learned
+          Invited talk at the <a href="talks.html">LHC Physics Center, Fermilab</a> &mdash;
+          <em>Discovery through the lens of AI: scaling anomaly detection with learned
           representations</em>.
         </div>
       </div>
       <div class="news-item">
         <div class="news-date">Sep 2026</div>
         <div class="news-body">
-          Started as Postdoctoral Associate at the MIT Laboratory for Nuclear Science,
-          following three years as an <a href="https://iaifi.org/">IAIFI</a> Fellow.
+          Started as Postdoctoral Associate at the MIT Laboratory for Nuclear Science, following
+          three years as an <a href="https://iaifi.org/">IAIFI</a> Fellow.
         </div>
       </div>
       <div class="news-item">
@@ -149,8 +174,8 @@
         <div class="news-body">
           <span class="news-badge">New paper</span>
           <a href="publications.html#pub-veraiphy">VERAIPHY</a>, the opening article of the
-          PHYSTAT series on statistical standards for machine learning in fundamental physics,
-          is on arXiv. I also joined the PHYSTAT organizing team and Advisory Committee.
+          PHYSTAT series on statistical standards for machine learning in fundamental physics.
+          I also joined the PHYSTAT organizing team and Advisory Committee.
           <span class="news-sub"><a href="https://arxiv.org/abs/2608.17724">arXiv:2608.17724</a></span>
         </div>
       </div>
@@ -169,18 +194,16 @@
           <span class="news-badge">New paper</span>
           <a href="publications.html#pub-verification">Are we ready for AI-driven discovery?</a>
           &mdash; my review for the VERAIPHY series, on when verification is essential in the
-          statistical discovery workflow and where machine learning&rsquo;s intrinsic limits
-          bound what can be claimed.
+          statistical discovery workflow.
           <span class="news-sub"><a href="https://arxiv.org/abs/2607.10039">arXiv:2607.10039</a></span>
         </div>
       </div>
       <div class="news-item">
         <div class="news-date">Feb 2026</div>
         <div class="news-body">
-          Co-organized the
-          <a href="https://indico.cern.ch/event/1617006/">VERAIPHY workshop</a> in Amsterdam
-          (16&ndash;17 February) &mdash; the initiative&rsquo;s first meeting on validation and
-          evaluation practice for machine learning in fundamental physics.
+          Co-organized the <a href="https://indico.cern.ch/event/1617006/">VERAIPHY workshop</a>
+          in Amsterdam (16&ndash;17 February) &mdash; the initiative&rsquo;s first meeting on
+          validation and evaluation practice for machine learning in fundamental physics.
         </div>
       </div>
       <div class="news-item">
@@ -205,92 +228,15 @@
     </div>
   </section>
 
-  <!-- ============================= HONORS ============================= -->
-  <section id="honors">
-    <h2>Honors and fellowships</h2>
-    <div class="rows">
-      <div class="row">
-        <div class="row-date">2025</div>
-        <div class="row-body">
-          <strong>Breakthrough Prize in Fundamental Physics</strong>
-          <div class="sub">Awarded to the ATLAS, CMS, ALICE and LHCb collaborations; co-recipient as a member of CMS.</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="row-date">2023&ndash;2026</div>
-        <div class="row-body">
-          <strong>IAIFI Fellowship</strong>
-          <div class="sub">NSF AI Institute for Artificial Intelligence and Fundamental Interactions. Competitively selected independent postdoctoral fellowship.</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="row-date">2019&ndash;2023</div>
-        <div class="row-body">
-          <strong>CERN Doctoral Student Programme</strong>
-          <div class="sub">Competitively selected doctoral fellowship at CERN.</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="row-date">2018</div>
-        <div class="row-body">
-          <strong>CERN Summer Student Programme</strong>
-          <div class="sub">Competitively selected.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================= BACKGROUND ============================= -->
-  <section id="background">
-    <h2>Background</h2>
-    <p class="bio">
-      The question has been the same since my undergraduate thesis: how do you establish,
-      rigorously, that data contain something your model did not predict? I trained as a
-      physicist at the <a href="https://www.unipd.it/en/">University of Padova</a> and carried
-      out my doctorate at <a href="https://home.cern/">CERN</a>, the European laboratory for
-      particle physics, as a CERN Doctoral Student in the
-      <a href="https://cms.cern/">CMS experiment</a> &mdash; one of the two general-purpose
-      detectors at the Large Hadron Collider. I was advised by Marco Zanetti and Andrea Wulzer
-      and supervised at CERN by Maurizio Pierini. My thesis developed the New Physics Learning
-      Machine, a model-agnostic test for departures from the Standard Model, and confronted what
-      I still consider the central obstacle to using such methods for real measurements: keeping
-      a p-value trustworthy when the reference model itself carries systematic uncertainty. I
-      deployed the method on CMS collision data and on detector monitoring.
-    </p>
-    <p class="bio">
-      From 2023 to 2026 I held an <a href="https://iaifi.org/">IAIFI</a> Fellowship &mdash; a
-      competitively awarded independent postdoctoral fellowship, which gave me the freedom to
-      define my own research programme across MIT and Harvard. I used it to take anomaly
-      detection beyond the setting it came from: into learned representations, into the
-      validation of generative models, and into the behaviour of large AI models. Over those
-      years I was mentored by Philip Harris at MIT and Demba Ba at Harvard SEAS, and built
-      collaborations across particle physics, statistics and machine learning.
-    </p>
-    <p class="bio">
-      I am now a Postdoctoral Associate at the
-      <a href="https://lns.mit.edu/">MIT Laboratory for Nuclear Science</a>. I remain a member of
-      the <a href="https://cms.cern/">CMS collaboration</a>, having convened its ML Innovation
-      group from 2023 to 2025, and I serve on the organizing team and Advisory Committee of
-      <a href="https://phystat.github.io/Website/">PHYSTAT</a>, the international forum where
-      particle physicists and statisticians work out how inference should be done in the field.
-      I co-organize <a href="research.html#veraiphy">VERAIPHY</a>, which is setting out the
-      statistical standards I would like work in this field to be held to.
-    </p>
-  </section>
-
   <!-- ============================= CONTACT ============================= -->
   <section id="contact">
     <h2>Contact</h2>
     <div class="contact-grid">
-      <div class="contact-row"><span>Email</span><span><a href="mailto:gaiag795@mit.edu">gaiag795@mit.edu</a></span></div>
-      <div class="contact-row"><span></span><span><a href="mailto:ggrosso@seas.harvard.edu">ggrosso@seas.harvard.edu</a></span></div>
+      <div class="contact-row"><span>Email</span><span><a href="mailto:gaiag795@mit.edu">gaiag795@mit.edu</a> &middot; <a href="mailto:ggrosso@seas.harvard.edu">ggrosso@seas.harvard.edu</a></span></div>
       <div class="contact-row"><span>CV</span><span><a href="cv.pdf">cv.pdf</a> &middot; updated October 2026</span></div>
-      <div class="contact-row"><span>ORCID</span><span><a href="https://orcid.org/0000-0002-8303-3291">0000-0002-8303-3291</a></span></div>
-      <div class="contact-row"><span>GitHub</span><span><a href="https://github.com/GaiaGrosso">@GaiaGrosso</a></span></div>
-      <div class="contact-row"><span>LinkedIn</span><span><a href="https://www.linkedin.com/in/gaia-grosso-a04185155">gaia-grosso</a></span></div>
       <div class="contact-row"><span>Based in</span><span>Cambridge, MA</span></div>
     </div>
-    <p style="margin-top:1.5rem;color:var(--muted);font-size:.92rem">
+    <p style="margin-top:1rem;color:var(--muted);font-size:.9rem">
       I am glad to hear from students and researchers interested in anomaly detection &mdash;
       whether the data comes from a collider, a telescope, or a language model.
     </p>

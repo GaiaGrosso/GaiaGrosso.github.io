@@ -10,13 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="research">
 
 <header class="nav">
   <div class="nav-inner">
     <a class="nav-name" href="index.html">Gaia Grosso</a>
     <nav class="nav-links">
       <a href="index.html">Home</a>
+      <a href="about.html">About</a>
       <a href="research.html" class="here">Research</a>
       <a href="publications.html">Publications</a>
       <a href="talks.html">Talks</a>
@@ -57,13 +58,53 @@
       cannot be characterized is of limited scientific use.
     </p>
 
-    <!-- jump links: the whole programme at a glance -->
-    <nav class="topicnav" aria-label="Research topics">
-      <a href="#robustness"><b>Robustness &amp; uncertainty</b><span>Systematics inside the test</span></a>
-      <a href="#architectures"><b>Interpretable architectures</b><span>Sparsity, locality, competition</span></a>
-      <a href="#scale"><b>Detection at scale</b><span>Raw data to p-values</span></a>
-      <a href="#generative"><b>Generative validation</b><span>When a surrogate can stand in</span></a>
-      <a href="#ai-models"><b>Auditing AI models</b><span>Drift, harm, representation</span></a>
+    <!-- the whole programme at a glance -->
+    <nav class="topicrow" aria-label="Research topics">
+      <a href="#robustness">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 19c4 0 4-12 9-12s5 12 9 12"/>
+          <path d="M2 15.5c4 0 4-9 9-9s5 9 9 9" opacity=".4"/>
+          <path d="M17 3v18" stroke-dasharray="2 2.5"/>
+        </svg>
+        <b>Robustness &amp; uncertainty</b>
+      </a>
+      <a href="#architectures">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="8" cy="9" r="4.2"/>
+          <circle cx="16" cy="15" r="3.2"/>
+          <circle cx="8" cy="9" r="1.3" fill="currentColor" stroke="none"/>
+          <circle cx="16" cy="15" r="1.1" fill="currentColor" stroke="none"/>
+          <circle cx="18.5" cy="5.5" r="1" fill="currentColor" stroke="none" opacity=".45"/>
+        </svg>
+        <b>Interpretable architectures</b>
+      </a>
+      <a href="#scale">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="4" cy="5" r="1.2" fill="currentColor" stroke="none"/>
+          <circle cx="4" cy="12" r="1.2" fill="currentColor" stroke="none"/>
+          <circle cx="4" cy="19" r="1.2" fill="currentColor" stroke="none"/>
+          <path d="M7 5.6 12.5 12 7 18.4"/>
+          <path d="M13 12h8m-3-3 3 3-3 3"/>
+        </svg>
+        <b>Detection at scale</b>
+      </a>
+      <a href="#generative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="12" r="6"/>
+          <circle cx="15" cy="12" r="6" stroke-dasharray="3 2.5"/>
+        </svg>
+        <b>Generative validation</b>
+      </a>
+      <a href="#ai-models">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="5.5" height="5.5" rx="1.2" opacity=".45"/>
+          <rect x="3" y="15.5" width="5.5" height="5.5" rx="1.2" opacity=".45"/>
+          <rect x="15.5" y="3" width="5.5" height="5.5" rx="1.2" opacity=".45"/>
+          <rect x="15.5" y="15.5" width="5.5" height="5.5" rx="1.2" opacity=".45"/>
+          <rect x="9.25" y="9.25" width="5.5" height="5.5" rx="1.2" fill="currentColor" stroke="none"/>
+        </svg>
+        <b>Auditing AI models</b>
+      </a>
     </nav>
 
     <div class="threads">
