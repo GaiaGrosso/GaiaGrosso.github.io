@@ -193,9 +193,25 @@
         </p>
         <div class="refs">
           &rarr;
+          <a href="publications.html#pub-sigma">SIGMA</a>
           <a href="publications.html#pub-genval">Learning to validate generative models</a>
           <a href="publications.html#pub-uqpipeline">Uncertainty-aware validation pipeline</a>
         </div>
+        <figure class="thread-fig">
+          <img src="fig-generative.png" alt="The SIGMA framework in four stages: generative model, estimation uncertainty, uncertainty-aware goodness-of-fit test, and calibration.">
+          <figcaption>A generative model fitted to a finite training sample is never exact, so a
+          powerful goodness-of-fit test will eventually reject it once the test set is large
+          enough to resolve the error of the fit. SIGMA propagates that error into the test
+          itself: the fit is linearized through its score functions <b>(A)</b>, its covariance
+          diagonalized and the unconstrained directions discarded <b>(B)</b>, and the resulting
+          uncertainties enter as nuisance parameters, promoting the point-null hypothesis to a
+          composite one <b>(C)</b>, with p-values calibrated on pseudo-experiments drawn under
+          that composite null <b>(D)</b>. A rejection then signals genuine mismodeling rather
+          than a large test set. From
+          <a href="https://arxiv.org/abs/2610.37398">An end-to-end framework for
+          uncertainty-aware validation of generative models</a>
+          (<a href="publications.html#pub-sigma">arXiv:2610.37398</a>).</figcaption>
+        </figure>
       </div>
 
       <!-- ---------------- 5 ---------------- -->

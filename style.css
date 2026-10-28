@@ -182,15 +182,34 @@ p { margin: 0 0 .7rem; }
 .topicrow svg { width: 30px; height: 30px; color: var(--accent); flex: none; }
 .topicrow b { font-size: .76rem; font-weight: 600; line-height: 1.25; }
 
-/* seven-column variant (publication categories) */
-.topicrow-7 { grid-template-columns: repeat(7, 1fr); gap: .4rem; }
-.topicrow-7 a { padding: .65rem .25rem; gap: .35rem; }
-.topicrow-7 svg { width: 24px; height: 24px; }
-.topicrow-7 b { font-size: .71rem; }
+/* the row also works with <button> children (publication filters) */
+.topicrow button {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  gap: .4rem; padding: .8rem .45rem;
+  border: 1px solid var(--line); border-radius: 9px;
+  background: var(--surface); color: inherit;
+  font: inherit; cursor: pointer;
+  transition: border-color .18s, background .18s, transform .18s;
+}
+.topicrow button:hover {
+  border-color: var(--accent); background: var(--accent-soft); transform: translateY(-2px);
+}
+.topicrow button.active {
+  border-color: var(--accent); background: var(--accent-soft); color: var(--accent);
+}
+.topicrow button.active svg { color: var(--accent); }
+
+/* eight-column variant (publication filters) */
+.topicrow-8 { grid-template-columns: repeat(8, 1fr); gap: .35rem; }
+.topicrow-8 button { padding: .6rem .2rem; gap: .32rem; }
+.topicrow-8 svg { width: 22px; height: 22px; }
+.topicrow-8 b { font-size: .68rem; }
+
+.pubgroup[hidden] { display: none; }
 
 @media (max-width: 680px) {
   .topicrow { grid-template-columns: repeat(2, 1fr); }
-  .topicrow-7 { grid-template-columns: repeat(4, 1fr); }
+  .topicrow-8 { grid-template-columns: repeat(4, 1fr); }
 }
 
 /* topic jump-links (research page) */
